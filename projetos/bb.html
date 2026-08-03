@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco do Brasil × Leapfone · Lucas Braga</title>
+  <meta name="description" content="Case study: structuring the smartphone subscription flow for Banco do Brasil, in partnership with Leapfone.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <aside class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <div class="ruler-progress"></div>
+      <span class="ruler-label">Overview</span>
+    </div>
+  </aside>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html#home" class="logo">lucas<span>braga</span></a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="../index.html#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="../index.html#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="../index.html#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#projetos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
+        </a>
+        <p class="eyebrow" data-en="Project 01 · Banking app" data-pt="Projeto 01 · Aplicativo bancário">Project 01 · Banking app</p>
+        <h1>Banco do Brasil × Leapfone</h1>
+        <p class="lead" data-en="Structuring the smartphone subscription flow offered to Banco do Brasil's Ourocard customers, in partnership with Leapfone, from discovery to engineering handoff." data-pt="Estruturação do fluxo de assinatura de smartphones oferecido aos clientes Ourocard do Banco do Brasil, em parceria com a Leapfone, do discovery ao handoff com engenharia.">Structuring the smartphone subscription flow offered to Banco do Brasil's Ourocard customers, in partnership with Leapfone, from discovery to engineering handoff.</p>
+        <div class="project-meta">
+          <div>
+            <span data-en="Role" data-pt="Papel">Role</span>
+            <strong data-en="Product Designer, end to end" data-pt="Product Designer, ponta a ponta">Product Designer, end to end</strong>
+          </div>
+          <div>
+            <span data-en="Partners" data-pt="Parceiros">Partners</span>
+            <strong>Leapfone, Banco do Brasil</strong>
+          </div>
+          <div>
+            <span data-en="Scope" data-pt="Escopo">Scope</span>
+            <strong data-en="Discovery, flows, testing, handoff" data-pt="Discovery, fluxos, testes, handoff">Discovery, flows, testing, handoff</strong>
+          </div>
+          <div>
+            <span data-en="Platform" data-pt="Plataforma">Platform</span>
+            <strong data-en="App and website" data-pt="App e site">App and website</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A financial benefit, delivered through a rental model." data-pt="Um benefício financeiro, entregue por meio de um modelo de aluguel.">A financial benefit, delivered through a rental model.</h2>
+          <p data-en="Banco do Brasil, in partnership with the startup Leapfone, started offering its customers the option to rent smartphones by subscription, with special conditions and exclusive benefits. The challenge was structuring an efficient, intuitive digital flow to sign up for the service, accessible through app and website, while guaranteeing clarity, security and adoption." data-pt="O Banco do Brasil, em parceria com a startup Leapfone, passou a oferecer aos seus clientes a possibilidade de alugar smartphones por assinatura, com condições especiais e benefícios exclusivos. O desafio era estruturar um fluxo digital eficiente e intuitivo para contratação do serviço, acessível via app e site, garantindo clareza, segurança e adesão.">Banco do Brasil, in partnership with the startup Leapfone, started offering its customers the option to rent smartphones by subscription, with special conditions and exclusive benefits. The challenge was structuring an efficient, intuitive digital flow to sign up for the service, accessible through app and website, while guaranteeing clarity, security and adoption.</p>
+          <p data-en="<strong>Goal:</strong> design a fluid, trustworthy journey for subscribing to a smartphone, respecting BB's guidelines, the particularities of a BYOD model, and integrating Leapfone's offer into the bank's own digital experience." data-pt="<strong>Objetivo:</strong> projetar uma jornada fluida e confiável para a assinatura de smartphones, respeitando as diretrizes do BB, as particularidades do modelo BYOD e integrando a oferta da Leapfone à experiência digital dos clientes."><strong>Goal:</strong> design a fluid, trustworthy journey for subscribing to a smartphone, respecting BB's guidelines, the particularities of a BYOD model, and integrating Leapfone's offer into the bank's own digital experience.</p>
+          <div class="stakeholder-row">
+            <span data-en="Product" data-pt="Produto">Product</span>
+            <span data-en="Engineering" data-pt="Engenharia">Engineering</span>
+            <span data-en="Leapfone ops" data-pt="Operação Leapfone">Leapfone ops</span>
+            <span data-en="BB compliance" data-pt="Compliance BB">BB compliance</span>
+          </div>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/bb-home.jpg" alt="Banco do Brasil app home screen with the subscription entry point"></div>
+              <figcaption data-en="Entry point inside the BB app" data-pt="Ponto de entrada dentro do app do BB">Entry point inside the BB app</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="discovery" data-ruler-en="Discovery" data-ruler-pt="Discovery" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow">Discovery</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Before drawing a single screen, understanding how trust is built." data-pt="Antes de desenhar uma tela, entender como a confiança é construída.">Before drawing a single screen, understanding how trust is built.</h2>
+          <h4 data-en="Desk research and benchmarking" data-pt="Desk research e benchmarking">Desk research and benchmarking</h4>
+          <p data-en="I analyzed the market landscape, device rental models and the experience offered by direct competitors (Itaú, Claro, Vivo, Amazon and Apple Trade-in), gathering learnings about tone of voice, decision steps and trust factors." data-pt="Analisei o cenário de mercado, modelos de aluguel de dispositivos e a experiência oferecida por concorrentes diretos (Itaú, Claro, Vivo, Amazon e Apple Trade-in), levantando aprendizados sobre tom de comunicação, etapas de decisão e fatores de confiança.">I analyzed the market landscape, device rental models and the experience offered by direct competitors (Itaú, Claro, Vivo, Amazon and Apple Trade-in), gathering learnings about tone of voice, decision steps and trust factors.</p>
+          <h4 data-en="Mapping the existing journey" data-pt="Mapeamento da jornada existente">Mapping the existing journey</h4>
+          <p data-en="Working with the product team, I mapped entry points (app, website, physical branch), decision steps (device, plan, benefits) and the core doubts customers had: is this a rental or a purchase, is it safe, which plan fits me." data-pt="Trabalhei com o time de produto para mapear os pontos de entrada (app, site, Ponto BB), as etapas decisórias (aparelho, plano, benefícios) e as principais dúvidas dos clientes: é aluguel ou compra, é seguro, qual o plano ideal.">Working with the product team, I mapped entry points (app, website, physical branch), decision steps (device, plan, benefits) and the core doubts customers had: is this a rental or a purchase, is it safe, which plan fits me.</p>
+          <h4 data-en="Personas and use cases" data-pt="Personas e casos de uso">Personas and use cases</h4>
+          <p data-en="Based on team data and quick interviews with Ourocard customers, we defined three target personas and prioritized flows for each one:" data-pt="Com base em dados do time e entrevistas rápidas com clientes do perfil Ourocard, definimos três personas-alvo e priorizamos os fluxos para cada uma:">Based on team data and quick interviews with Ourocard customers, we defined three target personas and prioritized flows for each one:</p>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="n">01</span>
+              <div><strong data-en="The early adopter" data-pt="Quem busca sempre o último modelo">The early adopter</strong><p data-en="Always wants the newest device, cares about upgrade paths." data-pt="Sempre quer o aparelho mais novo, se importa com a troca de modelo.">Always wants the newest device, cares about upgrade paths.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">02</span>
+              <div><strong data-en="The cautious customer" data-pt="Quem tem receio de alugar">The cautious customer</strong><p data-en="Not used to renting, needs reassurance about ownership and safety." data-pt="Não está acostumado a alugar, precisa de segurança sobre posse e riscos.">Not used to renting, needs reassurance about ownership and safety.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">03</span>
+              <div><strong data-en="The value seeker" data-pt="Quem busca custo-benefício">The value seeker</strong><p data-en="Wants practicality and the best monthly cost, less attached to a specific brand." data-pt="Busca praticidade e o melhor custo mensal, menos apegado a uma marca específica.">Wants practicality and the best monthly cost, less attached to a specific brand.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucao" data-ruler-en="Solution" data-ruler-pt="Solução" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Structuring the solution" data-pt="Estruturação da solução">Structuring the solution</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Choosing a device is easy. Choosing a subscription plan is not." data-pt="Escolher um aparelho é fácil. Escolher um plano de assinatura não é.">Choosing a device is easy. Choosing a subscription plan is not.</h2>
+          <p data-en="I structured flows for plan comparison, adding extra benefits, checkout and payment, and post-sale subscription management. All of it was built in FigJam and Figma, validating continuously with product and engineering." data-pt="Estruturei fluxos para comparação de planos, adição de benefícios extras, fechamento e pagamento, e pós-venda e gerenciamento da assinatura. Tudo foi feito em FigJam e Figma, validando continuamente com produto e engenharia.">I structured flows for plan comparison, adding extra benefits, checkout and payment, and post-sale subscription management. All of it was built in FigJam and Figma, validating continuously with product and engineering.</p>
+          <p data-en="The trickiest part was the device configuration step: condition, color and storage all change the monthly price in real time, and that price had to stay legible under a card offer that already involves its own numbers (Ourocard limit, installments, protection)." data-pt="A parte mais delicada foi a etapa de configuração do aparelho: condição, cor e armazenamento mudam o preço mensal em tempo real, e esse preço precisava se manter legível dentro de uma oferta de cartão que já envolve seus próprios números (limite do Ourocard, parcelas, proteção).">The trickiest part was the device configuration step: condition, color and storage all change the monthly price in real time, and that price had to stay legible under a card offer that already involves its own numbers (Ourocard limit, installments, protection).</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/bb-produto-full.jpg" alt="Device configuration screen with color, storage and plan options"></div>
+              <figcaption data-en="Device configuration" data-pt="Configuração do aparelho">Device configuration</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testes" data-ruler-en="Testing" data-ruler-pt="Testes" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Testing and validation" data-pt="Testes e validação">Testing and validation</p></div></div>
+        <div class="case-body">
+          <h2 data-en="See the whole flow, end to end." data-pt="Veja o fluxo inteiro, de ponta a ponta.">See the whole flow, end to end.</h2>
+          <p data-en="I ran design review sessions with the design and product team, refining microinteractions and error messages. Together with the team, we applied usability tests with real users, which led to improvements in three areas: clarity about the rental model versus a purchase, trust in the offer through plain-language terms, and a simplified payment step." data-pt="Conduzi sessões de design review com o time de design e produto, refinando microinterações e mensagens de erro. Em parceria com o time, aplicamos testes de usabilidade com usuários reais, o que gerou melhorias em três frentes: clareza sobre o modelo de aluguel vs. compra, confiança na oferta com termos em linguagem acessível, e simplificação da etapa de pagamento.">I ran design review sessions with the design and product team, refining microinteractions and error messages. Together with the team, we applied usability tests with real users, which led to improvements in three areas: clarity about the rental model versus a purchase, trust in the offer through plain-language terms, and a simplified payment step.</p>
+          <p data-en="Below is the full mobile flow as one continuous prototype, scroll inside the frame to browse it end to end, the same way it was tested with users." data-pt="Abaixo está o fluxo mobile completo como um protótipo contínuo, role dentro do quadro para navegar do início ao fim, do mesmo jeito que foi testado com usuários.">Below is the full mobile flow as one continuous prototype, scroll inside the frame to browse it end to end, the same way it was tested with users.</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap wide">
+              <div class="phone-frame"><img src="../assets/img/bb-full-flow.jpg" alt="Full scrollable prototype of the subscription flow, from hero to footer"></div>
+              <figcaption data-en="Full flow · scroll to explore" data-pt="Fluxo completo · role para explorar">Full flow · scroll to explore</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="handoff" data-ruler-en="Handoff" data-ruler-pt="Handoff" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow">Handoff</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A spec is a promise you keep to engineering." data-pt="Uma spec é uma promessa que você cumpre com a engenharia.">A spec is a promise you keep to engineering.</h2>
+          <p data-en="I delivered detailed functional documentation per screen: business rules, expected behavior at each step, integration stages with Leapfone, and the design system components used. Everything lived directly in Figma, with interactive specs for direct handoff to the engineering squads." data-pt="Entreguei documentação funcional detalhada por tela: regras de negócio, comportamentos esperados em cada etapa, estágios de integração com a Leapfone e componentes usados do design system. Tudo direto no Figma, com specs interativas para os squads de engenharia.">I delivered detailed functional documentation per screen: business rules, expected behavior at each step, integration stages with Leapfone, and the design system components used. Everything lived directly in Figma, with interactive specs for direct handoff to the engineering squads.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section dim">
+      <div class="container">
+        <p class="eyebrow" data-en="Results" data-pt="Resultados">Results</p>
+        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="What changed once it shipped." data-pt="O que mudou quando foi ao ar.">What changed once it shipped.</h2>
+        <ul class="case-results">
+          <li data-en="Lower average time to subscribe in the validated prototype" data-pt="Redução no tempo médio de contratação no protótipo validado">Lower average time to subscribe in the validated prototype</li>
+          <li data-en="Better comprehension of the offer after microcopy adjustments" data-pt="Melhora na compreensão da oferta após ajustes de microcopy">Better comprehension of the offer after microcopy adjustments</li>
+          <li data-en="Prototype validated across 3 fast test cycles, well received" data-pt="Prototipação validada em 3 ciclos rápidos, com boa receptividade">Prototype validated across 3 fast test cycles, well received</li>
+          <li data-en="Flow shipped inside the BB app, with plans to expand to other channels" data-pt="Fluxo implementado no app do BB, com previsão de expansão para outros canais">Flow shipped inside the BB app, with plans to expand to other channels</li>
+        </ul>
+        <p class="case-note" data-en="<strong>Note:</strong> some business information was adapted or masked to preserve sensitive data and respect confidentiality agreements. The essence of the project, the design process and the proposed solutions were kept intact for presentation purposes." data-pt="<strong>Nota:</strong> algumas informações de negócio foram adaptadas ou camufladas para preservar dados sensíveis e respeitar acordos de confidencialidade. A essência do projeto, os processos de design e as soluções propostas foram mantidos para fins de apresentação."><strong>Note:</strong> some business information was adapted or masked to preserve sensitive data and respect confidentiality agreements. The essence of the project, the design process and the proposed solutions were kept intact for presentation purposes.</p>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="container">
+        <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
+        <p data-en="There is also a corporate website redesign and a loyalty program case in the portfolio." data-pt="Tem também um redesign de site institucional e um case de programa de fidelidade no portfólio.">There is also a corporate website redesign and a loyalty program case in the portfolio.</p>
+        <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year></span> Lucas Braga</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:lucasmateuspessoal@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

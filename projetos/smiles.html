@@ -1,263 +1,219 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gol: Clube Smiles+ · Lucas Braga</title>
-<meta name="description" content="Case study do design do add-on de streaming do Clube Smiles, da Gol.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gol: Clube Smiles+ · Lucas Braga</title>
+  <meta name="description" content="Case study: designing Clube Smiles+, a new streaming add-on product inside Gol's loyalty program, from information architecture to subscriber management.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --purple: #663399;
-  --purple-dark: #4d2774;
-  --purple-soft: #E5DAF1;
-  --lilac: #EDE9F4;
-  --cream: #FFEADE;
-  --ink: #100D0A;
-  --ink-soft: #4D4D4D;
-  --paper: #FEFCFB;
-  --hairline: #E8E3DF;
-  --font: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
-}
-*,*::before,*::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin:0;
-  background: var(--paper);
-  color: var(--ink-soft);
-  font-family: var(--font);
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
-.container{ max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
-h1,h2,h3{ font-family: var(--font); color: var(--ink); margin:0; }
-
-@media (prefers-reduced-motion: reduce){ *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
-
-/* nav */
-.sm-nav{ position: sticky; top:0; z-index: 50; background: rgba(254,252,251,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--hairline); }
-.sm-nav-inner{ max-width: 1160px; margin:0 auto; padding: 16px clamp(20px,5vw,56px); display:flex; align-items:center; justify-content: space-between; }
-.sm-back{ font-weight: 700; font-size: 0.9rem; display:flex; align-items:center; gap:8px; color: var(--ink); opacity: 0.75; }
-.sm-back:hover{ opacity: 1; }
-.sm-pill{ background: var(--purple); color:#fff; font-weight: 800; font-size: 0.85rem; padding: 8px 18px; border-radius: 999px; }
-
-/* hero */
-.sm-hero{
-  background: linear-gradient(180deg, var(--lilac) 0%, var(--paper) 75%);
-  padding: clamp(4rem, 6vw, 6rem) 0 clamp(3rem, 5vw, 4rem);
-}
-.sm-hero-inner{ max-width: 720px; }
-.sm-kicker{ display:inline-flex; align-items:center; gap:8px; background: var(--cream); color: var(--purple-dark); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.03em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; margin-bottom: 20px; }
-.sm-hero h1{ font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.01em; }
-.sm-hero h1 .accent{ color: var(--purple); }
-.sm-hero p.lead{ font-size: 1.1rem; color: var(--ink-soft); max-width: 560px; margin-bottom: 32px; }
-.sm-btn{ display:inline-flex; align-items:center; gap:8px; font-weight: 700; font-size: 0.95rem; padding: 14px 28px; border-radius: 16px; background: var(--purple); color:#fff; transition: background .2s ease, transform .2s ease; }
-.sm-btn:hover{ background: var(--ink); transform: translateY(-1px); }
-.sm-btn-outline{ background: transparent; border: 1.5px solid var(--purple); color: var(--purple); }
-.sm-btn-outline:hover{ background: var(--purple-soft); }
-.sm-hero-ctas{ display:flex; gap: 14px; flex-wrap: wrap; }
-
-/* sections */
-.sm-section{ padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
-.sm-section.tint{ background: var(--lilac); }
-.sm-chip{ display:inline-flex; align-items:center; gap:8px; background: var(--cream); color: var(--purple-dark); font-weight: 800; font-size: 0.8rem; padding: 8px 16px; border-radius: 999px; margin-bottom: 18px; }
-.sm-section h2{ font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; line-height: 1.25; margin-bottom: 18px; letter-spacing: -0.01em; }
-.sm-section p{ margin-bottom: 16px; max-width: 640px; }
-.sm-grid-2{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 4vw, 4rem); align-items: start; }
-
-/* signature plan card, echoing the real Clube+ macro card structure */
-.sm-plan-card{ width: 100%; max-width: 340px; border-radius: 16px; overflow: hidden; border: 1px solid var(--hairline); background: #fff; box-shadow: 0 12px 32px rgba(102,51,153,0.14); }
-.sm-plan-header{ background: var(--purple); padding: 20px 24px; display:flex; align-items:center; justify-content: space-between; }
-.sm-plan-header span{ color:#fff; font-weight: 800; font-size: 1rem; }
-.sm-plan-header small{ color: var(--purple-soft); font-size: 0.75rem; font-weight: 700; }
-.sm-plan-body{ background: linear-gradient(160deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 24px; color: #fff; }
-.sm-plan-body .amount{ font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
-.sm-plan-body .amount span{ font-size: 0.85rem; font-weight: 600; opacity: 0.85; }
-.sm-plan-body ul{ list-style:none; margin: 16px 0 0; padding:0; display:flex; flex-direction:column; gap: 10px; }
-.sm-plan-body li{ display:flex; gap:8px; align-items:flex-start; font-size: 0.88rem; font-weight: 600; }
-.sm-plan-body li svg{ flex-shrink:0; margin-top:2px; }
-.sm-plan-streams{ display:flex; gap:6px; margin-top: 16px; }
-.sm-plan-streams span{ flex:1; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; font-size: 0.65rem; font-weight: 700; color: #fff; }
-.sm-plan-footer{ padding: 20px 24px; display:flex; align-items:center; justify-content: space-between; }
-.sm-plan-footer .price{ font-weight: 800; color: var(--ink); }
-.sm-plan-footer .price small{ display:block; font-size: 0.7rem; color: var(--ink-soft); font-weight: 600; }
-.sm-plan-footer button{ background: var(--purple); color:#fff; font-weight: 800; font-size: 0.82rem; padding: 10px 18px; border-radius: 16px; border:none; }
-
-.sm-checklist{ list-style:none; margin: 20px 0 0; padding:0; display:flex; flex-direction: column; gap: 12px; }
-.sm-checklist li{ display:flex; align-items:flex-start; gap: 10px; font-weight: 700; color: var(--ink); font-size: 0.95rem; }
-.sm-checklist svg{ flex-shrink:0; margin-top: 2px; color: var(--purple); }
-
-.sm-drawer-mock{ border: 1px solid var(--hairline); border-radius: 16px; background:#fff; padding: 24px; max-width: 360px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-.sm-drawer-mock .close{ width:32px; height:32px; border-radius:50%; border:1px solid var(--ink-soft); display:flex; align-items:center; justify-content:center; margin-left:auto; margin-bottom: 16px; font-size: 0.8rem; color: var(--ink); }
-.sm-drawer-mock h4{ font-size: 1.05rem; font-weight: 800; color: var(--ink); margin: 0 0 10px; }
-.sm-drawer-mock p{ font-size: 0.88rem; margin-bottom: 0; }
-
-.sm-faq{ border-top: 1px solid var(--hairline); }
-.sm-faq details{ border-bottom: 1px solid var(--hairline); padding: 18px 0; }
-.sm-faq summary{ cursor:pointer; font-weight: 800; color: var(--ink); font-size: 1rem; list-style:none; display:flex; align-items:center; justify-content: space-between; }
-.sm-faq summary::-webkit-details-marker{ display:none; }
-.sm-faq summary::after{ content:'+'; font-size: 1.3rem; color: var(--purple); transition: transform .2s ease; }
-.sm-faq details[open] summary::after{ content:'\2212'; }
-.sm-faq p{ margin: 12px 0 0; max-width: 700px; font-size: 0.95rem; }
-
-.sm-note{ margin-top: 32px; padding: 18px 20px; border-left: 3px solid var(--purple); background: var(--lilac); border-radius: 0 16px 16px 0; font-size: 0.92rem; color: var(--ink-soft); }
-
-.sm-cta{ background: var(--purple); color:#fff; text-align:center; padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
-.sm-cta h2{ color:#fff; margin-bottom: 16px; }
-.sm-cta p{ color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 28px; }
-.sm-cta .sm-btn{ background: #fff; color: var(--purple); }
-.sm-cta .sm-btn:hover{ background: var(--cream); }
-
-.sm-footer{ background: var(--lilac); padding: 28px 0; text-align:center; font-size: 0.85rem; color: var(--ink-soft); }
-
-@media (max-width: 780px){
-  .sm-grid-2{ grid-template-columns: 1fr; }
-  .sm-plan-card{ margin: 0 auto; }
-}
-</style>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-<nav class="sm-nav">
-  <div class="sm-nav-inner">
-    <a class="sm-back" href="../index.html#projetos">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Voltar pro portfólio
-    </a>
-    <span class="sm-pill">Clube Smiles+</span>
-  </div>
-</nav>
-
-<section class="sm-hero">
-  <div class="container sm-hero-inner">
-    <span class="sm-kicker">Case study · Programa de fidelidade</span>
-    <h1>Um add-on que precisava parecer <span class="accent">simples</span>, mesmo sendo complexo por dentro.</h1>
-    <p class="lead">O Clube Smiles+ empacota um serviço de streaming junto da assinatura de milhas do Clube Smiles. O desafio de design não era vender a ideia, era fazer alguém que já é assinante entender, escolher e confirmar tudo isso sem sair do fluxo em que já estava.</p>
-    <div class="sm-hero-ctas">
-      <a class="sm-btn" href="https://www.smiles.com.br/portal/clubemais" target="_blank" rel="noopener">Ver a página no ar ↗</a>
-      <a class="sm-btn sm-btn-outline" href="#contexto">Ver o case</a>
+  <aside class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <div class="ruler-progress"></div>
+      <span class="ruler-label">Overview</span>
     </div>
-  </div>
-</section>
+  </aside>
 
-<section class="sm-section" id="contexto">
-  <div class="container sm-grid-2">
-    <div>
-      <span class="sm-chip">Contexto</span>
-      <h2>Um benefício novo, dentro de um clube que já existe.</h2>
-      <p>O Clube Smiles é uma assinatura de milhas com anos de maturidade. O Clube Smiles+ chega como um complemento: quem já assina o clube pode adicionar um serviço de streaming (Disney+, HBO Max, SKY+ ou PlayKids) à mensalidade, escolhendo 1 opção por vez e podendo trocar uma vez por mês.</p>
-      <p>O risco de design aqui não era estético, era de entendimento: como comunicar que isso é um complemento, e não um produto novo e concorrente, sem duplicar cadastro de quem já é cliente Smiles?</p>
-      <ul class="sm-checklist">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Complementar ao Clube Smiles, nunca substituindo o que já existe</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Escolha de 1 streaming entre 4 opções, com troca mensal</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sem duplicar dados de quem já tem conta no Clube Smiles</li>
-      </ul>
-    </div>
-    <div class="sm-plan-card">
-      <div class="sm-plan-header">
-        <span>Plano 1.000</span>
-        <small>+ streaming</small>
-      </div>
-      <div class="sm-plan-body">
-        <div class="amount">R$ 75,90 <span>/mês</span></div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> 1.500 milhas todo mês</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Benefícios do Clube Smiles mantidos</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Troca de streaming uma vez por mês</li>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html#home" class="logo">lucas<span>braga</span></a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="../index.html#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="../index.html#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="../index.html#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
         </ul>
-        <div class="sm-plan-streams">
-          <span>Disney+</span><span>HBO Max</span><span>SKY+</span><span>PlayKids</span>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#projetos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
+        </a>
+        <p class="eyebrow" data-en="Project 03 · Loyalty program · 0 to 1" data-pt="Projeto 03 · Programa de fidelidade · 0 a 1">Project 03 · Loyalty program · 0 to 1</p>
+        <h1>Gol: Clube Smiles+</h1>
+        <p class="lead" data-en="Clube Smiles+ is a brand new product inside Gol's loyalty ecosystem: a streaming add-on bundled with the Clube Smiles subscription. I was the Product Designer responsible for designing it end to end, from information architecture to the ongoing subscriber experience, inside a project with unusually rigid business and content constraints." data-pt="O Clube Smiles+ é um produto novo dentro do ecossistema de fidelidade da Gol: um add-on de streaming empacotado com a assinatura do Clube Smiles. Fui o Product Designer responsável por desenhá-lo de ponta a ponta, da arquitetura de informação até a experiência contínua do assinante, dentro de um projeto com restrições de negócio e de conteúdo incomumente rígidas.">Clube Smiles+ is a brand new product inside Gol's loyalty ecosystem: a streaming add-on bundled with the Clube Smiles subscription. I was the Product Designer responsible for designing it end to end, from information architecture to the ongoing subscriber experience, inside a project with unusually rigid business and content constraints.</p>
+        <div class="project-meta">
+          <div>
+            <span data-en="Role" data-pt="Papel">Role</span>
+            <strong data-en="Lead Product Designer, 0 to 1" data-pt="Product Designer responsável, 0 a 1">Lead Product Designer, 0 to 1</strong>
+          </div>
+          <div>
+            <span data-en="Collaboration" data-pt="Colaboração">Collaboration</span>
+            <strong data-en="Business, Marketing, Streaming partners, Engineering" data-pt="Negócios, Marketing, Parceiros de streaming, Engenharia">Business, Marketing, Streaming partners, Engineering</strong>
+          </div>
+          <div>
+            <span data-en="Constraints" data-pt="Restrições">Constraints</span>
+            <strong data-en="Gol design system, partner content approval" data-pt="Design system da Gol, aprovação de conteúdo dos parceiros">Gol design system, partner content approval</strong>
+          </div>
+          <div>
+            <span data-en="Scope" data-pt="Escopo">Scope</span>
+            <strong data-en="IA, UI, subscriber lifecycle" data-pt="Arquitetura de informação, UI, ciclo de vida do assinante">IA, UI, subscriber lifecycle</strong>
+          </div>
         </div>
       </div>
-      <div class="sm-plan-footer">
-        <div class="price">A partir de<small>preço promocional nos 12 primeiros meses</small></div>
-        <button>Assine</button>
+    </section>
+
+    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A new product that had to feel familiar on day one." data-pt="Um produto novo que precisava parecer familiar desde o primeiro dia.">A new product that had to feel familiar on day one.</h2>
+          <p data-en="Clube Smiles is a long-standing miles subscription with millions of members. Clube Smiles+ is not a redesign of that product, it is a new one built on top of it: for a slightly higher monthly fee, subscribers get their usual mileage benefits plus a streaming service of their choice (Disney+, HBO Max, SKY+ or PlayKids), with the option to switch once a month." data-pt="O Clube Smiles é uma assinatura de milhas consolidada, com milhões de membros. O Clube Smiles+ não é um redesign desse produto, é um produto novo construído em cima dele: por uma mensalidade um pouco maior, o assinante mantém os benefícios de milhas de sempre e ganha um serviço de streaming à sua escolha (Disney+, HBO Max, SKY+ ou PlayKids), podendo trocar uma vez por mês.">Clube Smiles is a long-standing miles subscription with millions of members. Clube Smiles+ is not a redesign of that product, it is a new one built on top of it: for a slightly higher monthly fee, subscribers get their usual mileage benefits plus a streaming service of their choice (Disney+, HBO Max, SKY+ or PlayKids), with the option to switch once a month.</p>
+          <p data-en="That framing, an addition, not a replacement, was the single most important design constraint of the whole project. Every screen had to make it obvious that Clube Smiles+ builds on top of Clube Smiles, never competes with it or confuses an existing member about what they are already paying for." data-pt="Esse enquadramento, uma adição, não uma substituição, foi a restrição de design mais importante do projeto inteiro. Cada tela precisava deixar óbvio que o Clube Smiles+ é construído sobre o Clube Smiles, nunca compete com ele nem confunde um assinante já existente sobre o que ele já paga.">That framing, an addition, not a replacement, was the single most important design constraint of the whole project. Every screen had to make it obvious that Clube Smiles+ builds on top of Clube Smiles, never competes with it or confuses an existing member about what they are already paying for.</p>
+
+          <div class="case-figure">
+            <img src="../assets/img/smiles-comparison.jpg" alt="Comparison between Clube Smiles and Clube Smiles+ showing how the new product extends the existing one">
+            <figcaption data-en="How the product itself explains the difference between Clube Smiles and Clube Smiles+" data-pt="Como o próprio produto explica a diferença entre Clube Smiles e Clube Smiles+">How the product itself explains the difference between Clube Smiles and Clube Smiles+</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo" data-ruler-en="Process" data-ruler-pt="Processo" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Process and constraints" data-pt="Processo e restrições">Process and constraints</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Designing inside three sets of rules at once." data-pt="Desenhando dentro de três conjuntos de regras ao mesmo tempo.">Designing inside three sets of rules at once.</h2>
+          <p data-en="I followed a human-centered design process close to what ISO 9241-210 describes: understand the context of use, specify requirements with stakeholders, produce design solutions, and evaluate them against real constraints, cycling back whenever a rule or a partner requirement changed the problem. In practice, that meant working inside three layers of constraint that rarely show up together on the same project." data-pt="Segui um processo de design centrado no ser humano parecido com o que a ISO 9241-210 descreve: entender o contexto de uso, especificar requisitos com os stakeholders, produzir soluções de design e avaliá-las contra restrições reais, voltando ao início sempre que uma regra ou uma exigência de parceiro mudava o problema. Na prática, isso significou trabalhar dentro de três camadas de restrição que raramente aparecem juntas no mesmo projeto.">I followed a human-centered design process close to what ISO 9241-210 describes: understand the context of use, specify requirements with stakeholders, produce design solutions, and evaluate them against real constraints, cycling back whenever a rule or a partner requirement changed the problem. In practice, that meant working inside three layers of constraint that rarely show up together on the same project.</p>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="n">01</span>
+              <div>
+                <strong data-en="Gol's design system" data-pt="Design system da Gol">Gol's design system</strong>
+                <p data-en="This was a new product, not a new visual language. Every component, spacing token and interaction pattern had to come from the existing design system, in line with Nielsen's consistency and standards heuristic, so a Clube Smiles+ screen never felt like a separate app bolted onto Smiles." data-pt="Esse era um produto novo, não uma linguagem visual nova. Cada componente, token de espaçamento e padrão de interação precisava vir do design system já existente, em linha com a heurística de consistência e padrões de Nielsen, para que uma tela do Clube Smiles+ nunca parecesse um app separado colado no Smiles.">This was a new product, not a new visual language. Every component, spacing token and interaction pattern had to come from the existing design system, in line with Nielsen's consistency and standards heuristic, so a Clube Smiles+ screen never felt like a separate app bolted onto Smiles.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="n">02</span>
+              <div>
+                <strong data-en="Rigid business rules" data-pt="Regras de negócio rígidas">Rigid business rules</strong>
+                <p data-en="The billing logic (pro-rated first invoice, once-a-month streaming swap, plan tiers) came with little room to negotiate. My job was to translate rules written for finance and legal into interface states and copy that a subscriber could understand at a glance, not to redesign the rules themselves." data-pt="A lógica de cobrança (fatura pró-rata no primeiro mês, troca de streaming uma vez por mês, faixas de plano) veio com pouca margem de negociação. Meu trabalho era traduzir regras escritas para financeiro e jurídico em estados de interface e textos que o assinante entendesse de imediato, não redesenhar as regras em si.">The billing logic (pro-rated first invoice, once-a-month streaming swap, plan tiers) came with little room to negotiate. My job was to translate rules written for finance and legal into interface states and copy that a subscriber could understand at a glance, not to redesign the rules themselves.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="n">03</span>
+              <div>
+                <strong data-en="Partner content approval" data-pt="Aprovação de conteúdo dos parceiros">Partner content approval</strong>
+                <p data-en="Every screen showing a streaming partner's name, logo or description went through that partner's own approval process. That turned content design into a negotiation as much as a craft: copy had to stay flexible enough to survive a partner's brand review without losing clarity for the subscriber." data-pt="Toda tela que mostrasse o nome, logo ou descrição de um streaming parceiro passava pela aprovação do próprio parceiro. Isso transformou o content design em uma negociação tanto quanto um ofício: os textos precisavam ser flexíveis o suficiente para sobreviver à revisão de marca de um parceiro sem perder clareza para o assinante.">Every screen showing a streaming partner's name, logo or description went through that partner's own approval process. That turned content design into a negotiation as much as a craft: copy had to stay flexible enough to survive a partner's brand review without losing clarity for the subscriber.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="stakeholder-row">
+            <span data-en="Business" data-pt="Negócios">Business</span>
+            <span data-en="Marketing" data-pt="Marketing">Marketing</span>
+            <span data-en="Legal" data-pt="Jurídico">Legal</span>
+            <span data-en="Streaming partners" data-pt="Parceiros de streaming">Streaming partners</span>
+            <span data-en="Engineering" data-pt="Engenharia">Engineering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitetura" data-ruler-en="Architecture" data-ruler-pt="Arquitetura" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Information architecture" data-pt="Arquitetura de informação">Information architecture</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Show the value before asking for a decision." data-pt="Mostrar o valor antes de pedir a decisão.">Show the value before asking for a decision.</h2>
+          <p data-en="Streaming is a personal choice, most people already have a favorite service or already pay for one elsewhere. So I structured the page hierarchy to lead with the four options together and visible (Disney+, HBO Max, SKY+, PlayKids), before any subscription CTA, followed by the benefits that come bundled with the plan, and only then the price and the action to subscribe." data-pt="Streaming é uma escolha pessoal, a maioria das pessoas já tem um serviço favorito ou já paga por um em outro lugar. Por isso, estruturei a hierarquia da página para abrir com as quatro opções juntas e visíveis (Disney+, HBO Max, SKY+, PlayKids), antes de qualquer CTA de assinatura, seguidas dos benefícios que já vêm no plano, e só depois o preço e a ação de assinar.">Streaming is a personal choice, most people already have a favorite service or already pay for one elsewhere. So I structured the page hierarchy to lead with the four options together and visible (Disney+, HBO Max, SKY+, PlayKids), before any subscription CTA, followed by the benefits that come bundled with the plan, and only then the price and the action to subscribe.</p>
+
+          <div class="case-figure">
+            <img src="../assets/img/smiles-streaming-benefits.jpg" alt="Streaming logos shown together with the Clube Smiles+ benefits">
+            <figcaption data-en="Streaming options and plan benefits presented together, ahead of price" data-pt="Opções de streaming e benefícios do plano apresentados juntos, antes do preço">Streaming options and plan benefits presented together, ahead of price</figcaption>
+          </div>
+
+          <p data-en="The plan card itself reuses the same header, body and footer structure already familiar from Clube Smiles, so returning subscribers recognize the pattern instantly instead of learning a new one." data-pt="O próprio card do plano reaproveita a mesma estrutura de header, corpo e footer já familiar do Clube Smiles, para que o assinante recorrente reconheça o padrão de imediato em vez de aprender um novo.">The plan card itself reuses the same header, body and footer structure already familiar from Clube Smiles, so returning subscribers recognize the pattern instantly instead of learning a new one.</p>
+
+          <div class="case-figure">
+            <img src="../assets/img/smiles-plancard.jpg" alt="Clube Smiles+ plan card with mileage benefits and streaming options">
+            <figcaption data-en="Plan card: mileage benefits first, streaming choice below" data-pt="Card do plano: benefícios de milhas primeiro, escolha de streaming abaixo">Plan card: mileage benefits first, streaming choice below</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="detalhe" data-ruler-en="Detail" data-ruler-pt="Detalhe" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Deciding between options" data-pt="Decidindo entre as opções">Deciding between options</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Enough detail to decide, not enough to overwhelm." data-pt="Detalhe suficiente para decidir, sem exagerar.">Enough detail to decide, not enough to overwhelm.</h2>
+          <p data-en="Each streaming option needed its own detail card, since 'simultaneous streams', 'ads' and 'catalog' mean different things on Disney+, HBO Max, SKY+ and PlayKids, and the subscriber can only pick one at a time. I designed a single card template that could hold each partner's specifics without turning the page into four different mini-websites." data-pt="Cada opção de streaming precisava do seu próprio card de detalhes, já que 'telas simultâneas', 'anúncios' e 'catálogo' significam coisas diferentes no Disney+, HBO Max, SKY+ e PlayKids, e o assinante só pode escolher um por vez. Desenhei um único template de card capaz de acomodar as particularidades de cada parceiro sem transformar a página em quatro minissites diferentes.">Each streaming option needed its own detail card, since 'simultaneous streams', 'ads' and 'catalog' mean different things on Disney+, HBO Max, SKY+ and PlayKids, and the subscriber can only pick one at a time. I designed a single card template that could hold each partner's specifics without turning the page into four different mini-websites.</p>
+
+          <div class="case-figure">
+            <img src="../assets/img/smiles-streaming-catalog.jpg" alt="Detail cards for each streaming partner, with simultaneous access and content information">
+            <figcaption data-en="One template, four partners, each with its own approved copy and specs" data-pt="Um template, quatro parceiros, cada um com seu próprio texto e specs aprovados">One template, four partners, each with its own approved copy and specs</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gestao" data-ruler-en="Management" data-ruler-pt="Gestão" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Beyond sign-up" data-pt="Além da assinatura">Beyond sign-up</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Designing the whole life of a subscription, not just the sale." data-pt="Desenhando a vida inteira de uma assinatura, não só a venda.">Designing the whole life of a subscription, not just the sale.</h2>
+          <p data-en="Signing up is a single moment. Being a subscriber is ongoing, so the scope of this project also included the internal navigation and management experience for existing Clube Smiles+ members inside their account area: seeing the active streaming service, switching it within the monthly limit, understanding an upcoming charge, and cancelling if needed." data-pt="Assinar é um momento único. Ser assinante é contínuo, então o escopo deste projeto também incluiu a navegação interna e a experiência de gestão para assinantes já ativos do Clube Smiles+ dentro da área da conta: ver o streaming ativo, trocá-lo dentro do limite mensal, entender uma cobrança futura e cancelar se precisar.">Signing up is a single moment. Being a subscriber is ongoing, so the scope of this project also included the internal navigation and management experience for existing Clube Smiles+ members inside their account area: seeing the active streaming service, switching it within the monthly limit, understanding an upcoming charge, and cancelling if needed.</p>
+          <p data-en="Two decisions carried most of the weight here. First, confirming contact details needed to activate a streaming service (an email and phone number that do not always match the subscriber's main Smiles account) happens inline, without leaving the flow, so the person never loses context of what they were doing. Second, the pro-rated first invoice, a common source of 'is this a billing mistake' support tickets, gets a plain-language explanation exactly at the moment the doubt would appear, not buried in a terms of service page." data-pt="Duas decisões concentraram a maior parte do peso aqui. Primeiro, a confirmação dos dados de contato necessários para ativar um streaming (um e-mail e telefone que nem sempre coincidem com a conta principal do Smiles) acontece sem sair do fluxo, para que a pessoa nunca perca o contexto do que estava fazendo. Segundo, a fatura pró-rata do primeiro mês, fonte comum de chamados de suporte do tipo 'isso é erro de cobrança', recebe uma explicação em linguagem simples exatamente no momento em que a dúvida apareceria, não escondida em uma página de termos de uso.">Two decisions carried most of the weight here. First, confirming contact details needed to activate a streaming service (an email and phone number that do not always match the subscriber's main Smiles account) happens inline, without leaving the flow, so the person never loses context of what they were doing. Second, the pro-rated first invoice, a common source of 'is this a billing mistake' support tickets, gets a plain-language explanation exactly at the moment the doubt would appear, not buried in a terms of service page.</p>
+          <p data-en="Both patterns follow the same principle behind a good error message: explain what is happening and why, in the interface's own voice, right where the doubt happens." data-pt="Os dois padrões seguem o mesmo princípio de uma boa mensagem de erro: explicar o que está acontecendo e por quê, na voz da própria interface, exatamente onde a dúvida acontece.">Both patterns follow the same principle behind a good error message: explain what is happening and why, in the interface's own voice, right where the doubt happens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section dim">
+      <div class="container">
+        <p class="eyebrow" data-en="Results and takeaways" data-pt="Resultados e aprendizados">Results and takeaways</p>
+        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="Shipping a product that had to please six different audiences at once." data-pt="Lançar um produto que precisava agradar seis públicos diferentes ao mesmo tempo.">Shipping a product that had to please six different audiences at once.</h2>
+        <ul class="case-results">
+          <li data-en="A brand new product line shipped fully compliant with Gol's existing design system" data-pt="Uma linha de produto nova lançada em total conformidade com o design system já existente da Gol">A brand new product line shipped fully compliant with Gol's existing design system</li>
+          <li data-en="One card template reused across four streaming partners with distinct approved content" data-pt="Um único template de card reaproveitado entre quatro parceiros de streaming com conteúdos aprovados distintos">One card template reused across four streaming partners with distinct approved content</li>
+          <li data-en="Billing and swap rules translated into interface copy validated by business and legal" data-pt="Regras de cobrança e troca traduzidas em textos de interface validados por negócios e jurídico">Billing and swap rules translated into interface copy validated by business and legal</li>
+          <li data-en="Full subscriber lifecycle designed, from acquisition to ongoing account management" data-pt="Ciclo de vida completo do assinante desenhado, da aquisição à gestão contínua da conta">Full subscriber lifecycle designed, from acquisition to ongoing account management</li>
+        </ul>
+        <p data-en="What stayed with me from this project is that the hardest design problems here were rarely visual. Most of the real work was translation: turning legal language into something a subscriber trusts in three seconds, and turning four different partner brand books into one coherent template without anyone feeling like an afterthought." data-pt="O que ficou desse projeto pra mim é que os problemas de design mais difíceis raramente eram visuais. A maior parte do trabalho real era tradução: transformar linguagem jurídica em algo que o assinante confia em três segundos, e transformar quatro manuais de marca de parceiros diferentes em um único template coerente sem que nenhum deles parecesse um apêndice.">What stayed with me from this project is that the hardest design problems here were rarely visual. Most of the real work was translation: turning legal language into something a subscriber trusts in three seconds, and turning four different partner brand books into one coherent template without anyone feeling like an afterthought.</p>
+        <p class="case-note" data-en="<strong>Note:</strong> this case reflects the process and design decisions I led during the project. Some business details were simplified to preserve confidential information belonging to Gol." data-pt="<strong>Nota:</strong> este case reflete o processo e as decisões de design conduzidas por mim durante o projeto. Alguns detalhes de negócio foram simplificados para preservar informações confidenciais da Gol."><strong>Note:</strong> this case reflects the process and design decisions I led during the project. Some business details were simplified to preserve confidential information belonging to Gol.</p>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="container">
+        <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
+        <p data-en="There is also a banking case with Banco do Brasil and a corporate website redesign for Leapfone in the portfolio." data-pt="Tem também um case bancário com o Banco do Brasil e um redesign de site institucional da Leapfone no portfólio.">There is also a banking case with Banco do Brasil and a corporate website redesign for Leapfone in the portfolio.</p>
+        <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year></span> Lucas Braga</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:lucasmateuspessoal@gmail.com">Email</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="sm-section tint">
-  <div class="container sm-grid-2">
-    <div>
-      <span class="sm-chip">Decisão de design</span>
-      <h2>Confirmar dados sem tirar o cliente do fluxo.</h2>
-      <p>Pra ativar o streaming, a plataforma precisa de um e-mail e um telefone, que nem sempre são os mesmos já cadastrados no Smiles. Em vez de mandar o cliente pra uma tela nova ou pra um formulário separado, desenhei isso como um drawer lateral que abre por cima do fluxo de assinatura, sem perder o contexto de onde a pessoa estava.</p>
-      <p>O drawer também deixa claro, de forma direta, que isso não muda o cadastro principal da conta Smiles: é só o contato usado pra liberar o acesso ao streaming.</p>
-    </div>
-    <div class="sm-drawer-mock">
-      <div class="close">✕</div>
-      <h4>Confirme seus dados</h4>
-      <p>Com eles, você poderá acessar o Portal do Assinante para escolher seu streaming e concluir a ativação. Isso não mudará seus dados cadastrados na Smiles.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sm-section">
-  <div class="container sm-grid-2">
-    <div class="sm-drawer-mock" style="order:2;">
-      <div class="close">✕</div>
-      <h4>O que é Pró-Rata?</h4>
-      <p>Pró-rata é um cálculo proporcional utilizado para distribuir valores de forma justa com base no tempo de uso do serviço. No mês seguinte, a cobrança da mensalidade do streaming volta ao valor cheio.</p>
-    </div>
-    <div style="order:1;">
-      <span class="sm-chip">Decisão de design</span>
-      <h2>Explicar cobrança sem soar como letra pequena.</h2>
-      <p>Quem assina no meio do ciclo de cobrança pode ver um valor proporcional na primeira fatura, o famoso pró-rata. Isso costuma gerar dúvida e, sem contexto, parece cobrança errada. Em vez de esconder essa informação em termos de uso, criei um link "Saiba mais" que abre um segundo drawer, curto e direto, explicando o cálculo no momento exato em que a dúvida apareceria.</p>
-      <p>A ideia é a mesma por trás de qualquer boa mensagem de erro: explicar o que está acontecendo e por quê, na voz da interface, sem forçar a pessoa a sair da tela de confirmação para entender a própria fatura.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sm-section tint">
-  <div class="container">
-    <span class="sm-chip">Decisão de design</span>
-    <h2>Mostrar o valor antes de pedir a decisão.</h2>
-    <p>Streaming é uma decisão pessoal: cada pessoa já tem um serviço favorito, ou já assina outro em algum lugar. Por isso, os quatro logos (Disney+, HBO Max, SKY+ e PlayKids) aparecem juntos e visíveis antes de qualquer CTA de assinatura, não escondidos dentro de um dropdown. A pessoa vê a variedade primeiro, decide se aquilo faz sentido pra ela, e só depois avança pro plano e pro preço.</p>
-    <p>Essa ordem também ajudou a responder, de forma visual, a pergunta mais óbvia de quem chega na página: "quais streamings eu posso escolher", sem precisar ler um parágrafo pra descobrir.</p>
-  </div>
-</section>
-
-<section class="sm-section">
-  <div class="container">
-    <span class="sm-chip">Perguntas sobre o processo</span>
-    <h2>Algumas decisões que valem uma explicação.</h2>
-    <div class="sm-faq">
-      <details open>
-        <summary>Por que um drawer lateral em vez de um modal central?</summary>
-        <p>O drawer lateral preserva a sensação de continuidade: a pessoa ainda vê o fluxo principal por trás, entende que aquilo é um passo dentro do processo, não uma nova tela. Um modal central, especialmente em mobile, tende a parecer uma interrupção maior.</p>
-      </details>
-      <details>
-        <summary>Por que limitar a troca de streaming a uma vez por mês?</summary>
-        <p>Essa é uma regra de negócio (ligada ao ciclo de cobrança dos parceiros de streaming), mas cabia ao design deixar isso previsível: a informação "você pode trocar uma vez por mês" aparece antes da escolha, não como surpresa depois.</p>
-      </details>
-      <details>
-        <summary>Como evitar duplicar cadastro de quem já é do Clube Smiles?</summary>
-        <p>Reaproveitando o número Smiles como identificador único durante a confirmação, com uma verificação que avisa quando o CPF já está em uso como assinante do Clube Smiles+, evitando ativações duplicadas e direcionando a pessoa direto pro "Meu Clube".</p>
-      </details>
-    </div>
-    <p class="sm-note"><strong>Nota:</strong> este case reflete o processo e as decisões de design conduzidas por mim durante o projeto. Alguns detalhes de negócio foram simplificados para preservar informações confidenciais da Gol.</p>
-  </div>
-</section>
-
-<section class="sm-cta">
-  <div class="container">
-    <h2>Quer ver outro projeto?</h2>
-    <p>Tenho um case bancário com o Banco do Brasil e um redesign institucional da Leapfone no portfólio.</p>
-    <a class="sm-btn" href="../index.html#projetos">Ver todos os projetos</a>
-  </div>
-</section>
-
-<footer class="sm-footer">
-  Case de portfólio por Lucas Braga
-</footer>
-
+  <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Braga · Product Designer</title>
-  <meta name="description" content="Lucas Braga, Product Designer em Fortaleza. Projetos de produto digital para bancos, fintechs e startups, do discovery ao handoff.">
+  <meta name="description" content="Lucas Braga, Product Designer based in Fortaleza, Brazil. Digital product work for banks, fintechs and startups, from discovery to handoff.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,39 +18,45 @@
   <aside class="ruler" aria-hidden="true">
     <div class="ruler-track">
       <div class="ruler-progress"></div>
-      <span class="ruler-label">Início</span>
+      <span class="ruler-label">Home</span>
     </div>
   </aside>
 
   <nav class="nav">
     <div class="nav-inner">
       <a href="#home" class="logo">lucas<span>braga</span></a>
-      <ul class="nav-links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <main>
 
     <!-- ============ HERO ============ -->
-    <section id="home" data-ruler-label="Início" class="hero">
+    <section id="home" data-ruler-en="Home" data-ruler-pt="Início" class="hero">
       <div class="container hero-inner">
-        <p class="eyebrow">Product designer · Fortaleza, BR</p>
-        <h1>Design de produto que resolve problemas de negócio.</h1>
-        <p class="lead">Ajudo bancos, fintechs e startups a transformar fluxos complexos em experiências simples de usar, do discovery ao handoff, sempre com um olho no negócio, no usuário e no resultado.</p>
+        <p class="eyebrow" data-en="Product designer · Fortaleza, BR" data-pt="Product designer · Fortaleza, BR">Product designer · Fortaleza, BR</p>
+        <h1 data-en="Product design that solves business problems." data-pt="Design de produto que resolve problemas de negócio.">Product design that solves business problems.</h1>
+        <p class="lead" data-en="I help banks, fintechs and startups turn complex flows into experiences people actually enjoy using, from discovery to handoff, always with an eye on the business, the user and the outcome." data-pt="Ajudo bancos, fintechs e startups a transformar fluxos complexos em experiências simples de usar, do discovery ao handoff, sempre com um olho no negócio, no usuário e no resultado.">I help banks, fintechs and startups turn complex flows into experiences people actually enjoy using, from discovery to handoff, always with an eye on the business, the user and the outcome.</p>
         <div class="hero-ctas">
-          <a href="#projetos" class="btn btn-solid">Ver projetos</a>
-          <a href="#contato" class="btn btn-outline">Fale comigo</a>
+          <a href="#projetos" class="btn btn-solid" data-en="View projects" data-pt="Ver projetos">View projects</a>
+          <a href="#contato" class="btn btn-outline" data-en="Get in touch" data-pt="Fale comigo">Get in touch</a>
         </div>
         <div class="clients">
-          <span class="clients-label">Já trabalhei com</span>
+          <span class="clients-label" data-en="Selected clients" data-pt="Já trabalhei com">Selected clients</span>
           <div class="clients-row">
             <span>Banco do Brasil</span>
             <span>Leapfone</span>
@@ -62,15 +68,15 @@
     </section>
 
     <!-- ============ SOBRE ============ -->
-    <section id="sobre" data-ruler-label="Sobre">
+    <section id="sobre" data-ruler-en="About" data-ruler-pt="Sobre">
       <div class="container">
         <div class="about-grid">
-          <img class="about-photo reveal" src="assets/img/lucas-photo.jpg" alt="Retrato de Lucas Braga em um escritório" width="900" height="1096" loading="lazy">
+          <img class="about-photo reveal" src="assets/img/lucas-photo.jpg" alt="Portrait of Lucas Braga in an office" width="900" height="1096" loading="lazy">
           <div class="about-copy reveal">
-            <p class="eyebrow">Sobre</p>
-            <p class="lead-line"><strong>Sou Product Designer há 6 anos. Comecei na área de desenvolvimento e migrei para design de produto</strong> quando percebi que meu real interesse estava em entender o problema antes de desenhar a solução.</p>
-            <p>Hoje trabalho de ponta a ponta: mapeio jornadas, estruturo fluxos, testo hipóteses com usuários reais e documento specs para handoff com engenharia, sempre buscando equilíbrio entre experiência do usuário, viabilidade técnica e resultado de negócio.</p>
-            <p>Fora do trabalho, gosto de mergulhar em cultura pop e aprender sobre gente e lugares diferentes. No fim, é tudo pesquisa de usuário.</p>
+            <p class="eyebrow" data-en="About" data-pt="Sobre">About</p>
+            <p class="lead-line" data-en="<strong>I have been a Product Designer for 6 years. I started in development and moved into product design</strong> when I realized my real interest was understanding the problem before drawing the solution." data-pt="<strong>Sou Product Designer há 6 anos. Comecei na área de desenvolvimento e migrei para design de produto</strong> quando percebi que meu real interesse estava em entender o problema antes de desenhar a solução."><strong>I have been a Product Designer for 6 years. I started in development and moved into product design</strong> when I realized my real interest was understanding the problem before drawing the solution.</p>
+            <p data-en="Today I work end to end: mapping journeys, structuring flows, testing hypotheses with real users and documenting specs for handoff with engineering, always balancing user experience, technical feasibility and business outcome." data-pt="Hoje trabalho de ponta a ponta: mapeio jornadas, estruturo fluxos, testo hipóteses com usuários reais e documento specs para handoff com engenharia, sempre buscando equilíbrio entre experiência do usuário, viabilidade técnica e resultado de negócio.">Today I work end to end: mapping journeys, structuring flows, testing hypotheses with real users and documenting specs for handoff with engineering, always balancing user experience, technical feasibility and business outcome.</p>
+            <p data-en="Outside of work, I like diving into pop culture and learning about different people and places. In the end, it is all user research." data-pt="Fora do trabalho, gosto de mergulhar em cultura pop e aprender sobre gente e lugares diferentes. No fim, é tudo pesquisa de usuário.">Outside of work, I like diving into pop culture and learning about different people and places. In the end, it is all user research.</p>
             <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
           </div>
         </div>
@@ -78,63 +84,63 @@
     </section>
 
     <!-- ============ PROJETOS ============ -->
-    <section id="projetos" data-ruler-label="Projetos">
+    <section id="projetos" data-ruler-en="Projects" data-ruler-pt="Projetos">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Projetos</p>
-          <h2>Case studies selecionados.</h2>
+          <p class="eyebrow" data-en="Projects" data-pt="Projetos">Projects</p>
+          <h2 data-en="Selected work." data-pt="Seleção de projetos.">Selected work.</h2>
         </div>
 
         <div class="projects-list">
 
           <article class="project-card reveal">
             <div class="project-media">
-              <img src="assets/img/bb-app-mockup.jpg" alt="Mockup do app do Banco do Brasil com o módulo de assinatura de smartphones" loading="lazy">
+              <img src="assets/img/bb-home.jpg" alt="Banco do Brasil app with the new smartphone subscription module" loading="lazy">
             </div>
             <div class="project-body">
-              <span class="project-index">01 / App bancário</span>
+              <span class="project-index" data-en="01 / Banking app" data-pt="01 / Aplicativo bancário">01 / Banking app</span>
               <h3>Banco do Brasil × Leapfone</h3>
-              <p>Estruturação do fluxo de assinatura de smartphones para clientes Ourocard do BB, do discovery ao handoff com engenharia.</p>
+              <p data-en="Structuring the smartphone subscription flow for Ourocard customers, from discovery to engineering handoff." data-pt="Estruturação do fluxo de assinatura de smartphones para clientes Ourocard do BB, do discovery ao handoff com engenharia.">Structuring the smartphone subscription flow for Ourocard customers, from discovery to engineering handoff.</p>
               <div class="project-tags">
                 <span>Discovery</span>
-                <span>Fluxos</span>
+                <span data-en="Flows" data-pt="Fluxos">Flows</span>
                 <span>Handoff</span>
               </div>
-              <button class="btn btn-outline" data-project="bb">Ver case completo</button>
+              <a class="btn btn-outline" href="projetos/bb.html"><span data-en="View full project" data-pt="Ver case completo">View full project</span> →</a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-media split">
-              <img src="assets/img/leapfone-before.png" alt="Site da Leapfone antes do redesign" loading="lazy">
-              <img src="assets/img/leapfone-after.png" alt="Site da Leapfone depois do redesign" loading="lazy">
+              <img src="assets/img/leapfone-before.png" alt="Leapfone website before the redesign" loading="lazy">
+              <img src="assets/img/leapfone-after.png" alt="Leapfone website after the redesign" loading="lazy">
             </div>
             <div class="project-body">
-              <span class="project-index">02 / Website institucional</span>
-              <h3>Leapfone: Redesign institucional</h3>
-              <p>Redesign do site B2B/B2C da Leapfone para comunicar maturidade e credibilidade a investidores, guiado por dados de comportamento.</p>
+              <span class="project-index" data-en="02 / Corporate website" data-pt="02 / Website institucional">02 / Corporate website</span>
+              <h3 data-en="Leapfone: institutional redesign" data-pt="Leapfone: Redesign institucional">Leapfone: institutional redesign</h3>
+              <p data-en="Redesign of Leapfone's B2B/B2C website to communicate maturity and credibility to investors, guided by behavioral data." data-pt="Redesign do site B2B/B2C da Leapfone para comunicar maturidade e credibilidade a investidores, guiado por dados de comportamento.">Redesign of Leapfone's B2B/B2C website to communicate maturity and credibility to investors, guided by behavioral data.</p>
               <div class="project-tags">
                 <span>UX Writing</span>
-                <span>Data-driven</span>
+                <span data-en="Data-driven" data-pt="Data-driven">Data-driven</span>
                 <span>SEO</span>
               </div>
-              <a class="btn btn-outline" href="projetos/leapfone.html">Ver case completo →</a>
+              <a class="btn btn-outline" href="projetos/leapfone.html"><span data-en="View full project" data-pt="Ver case completo">View full project</span> →</a>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-media smiles-teaser">
-              <span class="smiles-teaser-mark">Clube Smiles+</span>
+            <div class="project-media">
+              <img src="assets/img/smiles-plancard.jpg" alt="Clube Smiles+ streaming subscription plan card" loading="lazy">
             </div>
             <div class="project-body">
-              <span class="project-index">03 / Programa de fidelidade</span>
+              <span class="project-index" data-en="03 / Loyalty program" data-pt="03 / Programa de fidelidade">03 / Loyalty program</span>
               <h3>Gol: Clube Smiles+</h3>
-              <p>Design do add-on de streaming do Clube Smiles: escolha de plano, seleção do serviço de streaming e confirmação de dados dentro de um produto de fidelidade já consolidado.</p>
+              <p data-en="Design of a brand new product inside Gol's loyalty program: a streaming add-on bundled with the Clube Smiles subscription." data-pt="Design de um produto novo dentro do programa de fidelidade da Gol: um add-on de streaming empacotado com a assinatura do Clube Smiles.">Design of a brand new product inside Gol's loyalty program: a streaming add-on bundled with the Clube Smiles subscription.</p>
               <div class="project-tags">
-                <span>Onboarding</span>
-                <span>Design de sistemas</span>
+                <span data-en="0 to 1" data-pt="0 a 1">0 to 1</span>
+                <span data-en="Design systems" data-pt="Design systems">Design systems</span>
               </div>
-              <a class="btn btn-outline" href="projetos/smiles.html">Ver case completo →</a>
+              <a class="btn btn-outline" href="projetos/smiles.html"><span data-en="View full project" data-pt="Ver case completo">View full project</span> →</a>
             </div>
           </article>
 
@@ -143,11 +149,11 @@
     </section>
 
     <!-- ============ DEPOIMENTOS ============ -->
-    <section id="depoimentos" data-ruler-label="Depoimentos">
+    <section id="depoimentos" data-ruler-en="Testimonials" data-ruler-pt="Depoimentos">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Depoimentos</p>
-          <h2>O que dizem sobre trabalhar comigo.</h2>
+          <p class="eyebrow" data-en="Testimonials" data-pt="Depoimentos">Testimonials</p>
+          <h2 data-en="What people say about working with me." data-pt="O que dizem sobre trabalhar comigo.">What people say about working with me.</h2>
         </div>
 
         <div class="testimonial-grid reveal">
@@ -179,31 +185,31 @@
     </section>
 
     <!-- ============ CONTATO ============ -->
-    <section id="contato" data-ruler-label="Contato">
+    <section id="contato" data-ruler-en="Contact" data-ruler-pt="Contato">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="eyebrow">Contato</p>
-          <h2>Precisando de design de produto que se destaque?</h2>
-          <p>Manda uma mensagem e vamos conversar sobre seu projeto.</p>
-          <p class="contact-direct">ou escreva direto pra <a href="mailto:lucasmateuspessoal@gmail.com">lucasmateuspessoal@gmail.com</a></p>
+          <p class="eyebrow" data-en="Contact" data-pt="Contato">Contact</p>
+          <h2 data-en="Need product design that stands out?" data-pt="Precisando de design de produto que se destaque?">Need product design that stands out?</h2>
+          <p data-en="Send a message and let's talk about your project." data-pt="Manda uma mensagem e vamos conversar sobre seu projeto.">Send a message and let's talk about your project.</p>
+          <p class="contact-direct"><span data-en="or email me directly at" data-pt="ou escreva direto pra">or email me directly at</span> <a href="mailto:lucasmateuspessoal@gmail.com">lucasmateuspessoal@gmail.com</a></p>
         </div>
 
         <form class="contact-form reveal" action="https://formspree.io/f/SEU_FORM_ID" method="POST">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field">
-            <label for="name">Nome</label>
+            <label for="name" data-en="Name" data-pt="Nome">Name</label>
             <input type="text" id="name" name="name" required autocomplete="name">
           </div>
           <div class="field">
-            <label for="email">Email</label>
+            <label for="email" data-en="Email" data-pt="Email">Email</label>
             <input type="email" id="email" name="email" required autocomplete="email">
           </div>
           <div class="field">
-            <label for="message">Mensagem</label>
+            <label for="message" data-en="Message" data-pt="Mensagem">Message</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
           <div class="form-foot">
-            <button type="submit" class="btn btn-solid">Enviar</button>
+            <button type="submit" class="btn btn-solid" data-en="Send" data-pt="Enviar">Send</button>
             <span class="form-msg" role="status"></span>
           </div>
         </form>
@@ -221,13 +227,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- case study modal -->
-  <div class="modal-overlay">
-    <div class="modal">
-      <div class="modal-inner"></div>
-    </div>
-  </div>
 
   <script src="js/script.js"></script>
 </body>

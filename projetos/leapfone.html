@@ -1,326 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leapfone: Redesign institucional · Lucas Braga</title>
-<meta name="description" content="Case study do redesign do site B2B da Leapfone, guiado por dados de comportamento e pesquisa com clientes.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leapfone: institutional redesign · Lucas Braga</title>
+  <meta name="description" content="Case study: redesigning Leapfone's B2B website to communicate maturity and credibility to investors.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --ink: #1F1F1F;
-  --ink-soft: #474747;
-  --paper: #FAFAFA;
-  --paper-dim: #F2F2F2;
-  --pink: #FF4B6C;
-  --pink-strong: #EB2D52;
-  --pink-light: #FFCFD3;
-  --pink-tint: #FFF1F1;
-  --hairline: #E0E0E0;
-  --radius-card: 16px;
-  --radius-btn: 8px;
-  --font-display: 'Sora', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-}
-*,*::before,*::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin:0;
-  background: var(--paper);
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
-.container{ max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
-h1,h2,h3{ font-family: var(--font-display); color: var(--ink); margin:0; letter-spacing: -0.01em; }
-
-@media (prefers-reduced-motion: reduce){ *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
-
-/* nav */
-.lf-nav{
-  position: sticky; top:0; z-index: 50;
-  background: rgba(31,31,31,0.92);
-  backdrop-filter: blur(8px);
-  color: #fff;
-}
-.lf-nav-inner{
-  max-width: 1160px; margin:0 auto; padding: 18px clamp(20px,5vw,56px);
-  display:flex; align-items:center; justify-content: space-between;
-}
-.lf-back{
-  font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
-  display:flex; align-items:center; gap:8px;
-  color: #fff; opacity: 0.85;
-}
-.lf-back:hover{ opacity: 1; }
-.lf-logo{ font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
-.lf-logo span{ color: var(--pink); }
-
-/* hero */
-.lf-hero{
-  background: var(--ink);
-  color: #fff;
-  padding: clamp(4rem, 5vw, 6rem) 0 clamp(3rem, 5vw, 5rem);
-  position: relative;
-  overflow: hidden;
-}
-.lf-hero::before{
-  content:'';
-  position: absolute;
-  width: 620px; height: 620px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,75,108,0.35) 0%, rgba(255,75,108,0.08) 45%, transparent 72%);
-  top: -220px; right: -160px;
-  pointer-events: none;
-}
-.lf-hero-inner{ position: relative; z-index: 1; max-width: 760px; }
-.lf-kicker{
-  font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--pink-light); margin-bottom: 18px; display:block;
-}
-.lf-hero h1{
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
-  line-height: 1.12;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 22px;
-}
-.lf-hero h1 .accent{ color: var(--pink-light); }
-.lf-hero p.lead{
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.78);
-  max-width: 560px;
-  margin-bottom: 32px;
-}
-.lf-btn{
-  display:inline-flex; align-items:center; gap:8px;
-  font-family: var(--font-body); font-weight: 700; font-size: 0.92rem;
-  padding: 14px 28px;
-  border-radius: var(--radius-btn);
-  background: var(--pink);
-  color: #fff;
-  transition: background .2s ease, transform .2s ease;
-}
-.lf-btn:hover{ background: var(--pink-strong); transform: translateY(-1px); }
-.lf-btn-outline{
-  background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  color: #fff;
-}
-.lf-btn-outline:hover{ border-color: #fff; background: rgba(255,255,255,0.08); }
-.lf-hero-ctas{ display:flex; gap: 14px; flex-wrap: wrap; }
-
-/* sections */
-.lf-section{ padding: clamp(3.5rem, 6vw, 6rem) 0; }
-.lf-section.dim{ background: var(--paper-dim); }
-.lf-chip{
-  display:inline-flex; align-items:center; gap:8px;
-  background: var(--pink-tint);
-  color: var(--pink-strong);
-  font-weight: 700; font-size: 0.82rem;
-  padding: 8px 16px;
-  border-radius: 999px;
-  margin-bottom: 18px;
-}
-.lf-grid-2{
-  display:grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: center;
-}
-.lf-section h2{ font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: 18px; }
-.lf-section p{ margin-bottom: 16px; max-width: 620px; }
-.lf-checklist{ list-style:none; margin: 24px 0 0; padding:0; display:flex; flex-direction: column; gap: 14px; }
-.lf-checklist li{ display:flex; align-items:flex-start; gap: 12px; font-weight: 500; color: var(--ink); }
-.lf-checklist svg{ flex-shrink:0; margin-top: 2px; color: var(--pink); }
-
-.lf-compare{
-  display:grid; grid-template-columns: 1fr 1fr; gap: 20px;
-}
-.lf-compare figure{ margin:0; }
-.lf-compare img{ border-radius: var(--radius-card); border: 1px solid var(--hairline); }
-.lf-compare figcaption{
-  margin-top: 10px; font-weight: 700; font-size: 0.85rem;
-  text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft);
-}
-
-.lf-feature-image{
-  border-radius: var(--radius-card);
-  background: linear-gradient(155deg, var(--ink) 0%, #3a1420 100%);
-  aspect-ratio: 4/3;
-  display:flex; align-items:center; justify-content:center;
-  position: relative;
-  overflow: hidden;
-}
-.lf-feature-image .tag{
-  font-family: var(--font-display); font-weight: 800; color: #fff; font-size: 1.4rem;
-  opacity: 0.9;
-}
-.lf-feature-image::after{
-  content:'';
-  position:absolute; width: 260px; height: 260px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,75,108,0.5), transparent 70%);
-  bottom: -100px; right: -80px;
-}
-
-.lf-stats{
-  display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-  margin-top: 36px;
-}
-.lf-stat{
-  background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-card);
-  padding: 24px;
-}
-.lf-stat strong{ display:block; font-family: var(--font-display); font-size: 1.6rem; color: var(--pink-strong); margin-bottom: 6px; }
-.lf-stat span{ font-size: 0.9rem; color: var(--ink-soft); }
-
-.lf-note{
-  margin-top: 32px;
-  padding: 18px 20px;
-  border-left: 3px solid var(--pink);
-  background: var(--pink-tint);
-  border-radius: 0 var(--radius-card) var(--radius-card) 0;
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-}
-
-.lf-cta{
-  background: var(--ink); color:#fff; text-align:center;
-  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
-}
-.lf-cta h2{ color:#fff; margin-bottom: 16px; }
-.lf-cta p{ color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 28px; }
-
-.lf-footer{
-  background: var(--pink-tint);
-  padding: 28px 0;
-  text-align:center;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 780px){
-  .lf-grid-2{ grid-template-columns: 1fr; }
-  .lf-compare{ grid-template-columns: 1fr; }
-  .lf-stats{ grid-template-columns: 1fr; }
-}
-</style>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-<nav class="lf-nav">
-  <div class="lf-nav-inner">
-    <a class="lf-back" href="../index.html#projetos">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Voltar pro portfólio
-    </a>
-    <span class="lf-logo">leap<span>fone</span></span>
-  </div>
-</nav>
-
-<section class="lf-hero">
-  <div class="container lf-hero-inner">
-    <span class="lf-kicker">Case study · Website institucional</span>
-    <h1>Um redesign que tinha que provar <span class="accent">maturidade</span> pra quem ia investir na empresa.</h1>
-    <p class="lead">A Leapfone se preparava para uma rodada com investidores, e o site institucional B2B precisava comunicar isso: solidez, clareza e capacidade de escala. Conduzi o redesign do zero, com base em dados de comportamento e pesquisa com clientes.</p>
-    <div class="lf-hero-ctas">
-      <a class="lf-btn" href="https://empresas.leapfone.com.br" target="_blank" rel="noopener">Ver o site no ar ↗</a>
-      <a class="lf-btn lf-btn-outline" href="#contexto">Ver o case</a>
+  <aside class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <div class="ruler-progress"></div>
+      <span class="ruler-label">Overview</span>
     </div>
-  </div>
-</section>
+  </aside>
 
-<section class="lf-section" id="contexto">
-  <div class="container">
-    <span class="lf-chip">Contexto</span>
-    <h2>De site institucional a ferramenta de vendas B2B.</h2>
-    <p>A Leapfone oferece assinatura de smartphones corporativos para empresas, e o site antigo ainda falava com um tom mais voltado a pessoa física: imagens escuras, CTA "Pague por mês" e um catálogo de aparelhos como se fosse uma loja. Para o momento de captação, isso não comunicava a maturidade que a empresa já tinha.</p>
-    <p>Conduzi um trabalho de pesquisa e entendimento profundo do negócio, mapeando a comunicação com os usuários, o posicionamento frente à concorrência e as oportunidades de evolução da experiência digital.</p>
-
-    <div class="lf-compare" style="margin-top: 36px;">
-      <figure>
-        <img src="../assets/img/leapfone-before.png" alt="Site da Leapfone antes do redesign, com tom voltado a pessoa física">
-        <figcaption>Antes</figcaption>
-      </figure>
-      <figure>
-        <img src="../assets/img/leapfone-after.png" alt="Site da Leapfone depois do redesign, com tom institucional B2B">
-        <figcaption>Depois</figcaption>
-      </figure>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html#home" class="logo">lucas<span>braga</span></a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="../index.html#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="../index.html#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="../index.html#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="lf-section dim">
-  <div class="container lf-grid-2">
-    <div>
-      <span class="lf-chip">Análise do funil</span>
-      <h2>O funil era simples. O problema era achar o botão.</h2>
-      <p>Identifiquei pontos de fricção no funil: visitante entra, tenta entender o serviço, e só depois solicita uma proposta. O site antigo apresentava conteúdo pouco escaneável, com CTAs escondidos abaixo de blocos decorativos.</p>
-      <p><strong style="color: var(--ink);">Solução:</strong> reposicionar os CTAs acima da dobra, criar um caminho claro até "Solicitar Proposta" e organizar as informações de forma progressiva: proposta de valor, benefícios, prova social, comparativo e ação.</p>
-      <ul class="lf-checklist">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> CTA principal visível já no primeiro scroll, incluindo mobile</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Estrutura de conteúdo progressiva, sem repetir a mesma mensagem</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Prova social (empresas clientes) posicionada antes do formulário</li>
-      </ul>
+  <main>
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#projetos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
+        </a>
+        <p class="eyebrow" data-en="Project 02 · Corporate website" data-pt="Projeto 02 · Website institucional">Project 02 · Corporate website</p>
+        <h1 data-en="Leapfone: institutional redesign" data-pt="Leapfone: Redesign institucional">Leapfone: institutional redesign</h1>
+        <p class="lead" data-en="Redesigning Leapfone's B2B/B2C website to communicate the company's maturity and capacity to scale, right as it prepared to raise a funding round." data-pt="Redesign do site B2B/B2C da Leapfone para comunicar a maturidade e a capacidade de escala da empresa, justamente no momento em que ela se preparava para uma rodada de investimento.">Redesigning Leapfone's B2B/B2C website to communicate the company's maturity and capacity to scale, right as it prepared to raise a funding round.</p>
+        <div class="project-meta">
+          <div>
+            <span data-en="Role" data-pt="Papel">Role</span>
+            <strong data-en="Product Designer, end to end" data-pt="Product Designer, ponta a ponta">Product Designer, end to end</strong>
+          </div>
+          <div>
+            <span data-en="Collaboration" data-pt="Colaboração">Collaboration</span>
+            <strong data-en="Marketing, Growth" data-pt="Marketing, Growth">Marketing, Growth</strong>
+          </div>
+          <div>
+            <span data-en="Scope" data-pt="Escopo">Scope</span>
+            <strong data-en="Research, UX writing, SEO" data-pt="Pesquisa, UX writing, SEO">Research, UX writing, SEO</strong>
+          </div>
+          <div>
+            <span data-en="Platform" data-pt="Plataforma">Platform</span>
+            <strong data-en="Website" data-pt="Website">Website</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A website that had to grow up fast." data-pt="Um site que precisava crescer rápido.">A website that had to grow up fast.</h2>
+          <p data-en="Leapfone was preparing to open a funding round with investors, and the institutional website suddenly had an essential role in that moment: communicating the product's maturity, its ability to scale, and reinforcing the clarity and credibility of the service." data-pt="A Leapfone estava se preparando para abrir uma rodada com investidores, e o site institucional passou a ter um papel essencial nesse momento: comunicar a maturidade do produto, sua capacidade de escala e reforçar a clareza e credibilidade do serviço.">Leapfone was preparing to open a funding round with investors, and the institutional website suddenly had an essential role in that moment: communicating the product's maturity, its ability to scale, and reinforcing the clarity and credibility of the service.</p>
+          <p data-en="I led a deep research effort into the business itself, mapping how the company communicated with users, its positioning against competitors, and the opportunities to evolve the digital experience." data-pt="Conduzi um trabalho de pesquisa e entendimento profundo do negócio, mapeando a comunicação com os usuários, o posicionamento frente à concorrência e as oportunidades de evolução da experiência digital.">I led a deep research effort into the business itself, mapping how the company communicated with users, its positioning against competitors, and the opportunities to evolve the digital experience.</p>
+
+          <div class="case-compare">
+            <figure>
+              <img src="../assets/img/leapfone-before.png" alt="Leapfone website before the redesign">
+              <figcaption data-en="Before" data-pt="Antes">Before</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/leapfone-after.png" alt="Leapfone website after the redesign">
+              <figcaption data-en="After" data-pt="Depois">After</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funil" data-ruler-en="Funnel" data-ruler-pt="Funil" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Funnel analysis" data-pt="Análise do funil">Funnel analysis</p></div></div>
+        <div class="case-body">
+          <h2 data-en="The funnel was simple. Finding the button was not." data-pt="O funil era simples. O problema era achar o botão.">The funnel was simple. Finding the button was not.</h2>
+          <p data-en="I identified friction points across the funnel: visitor lands, tries to understand the service, and only then requests a proposal. The old site presented content that was hard to scan, with CTAs buried below decorative blocks." data-pt="Identifiquei pontos de fricção no funil: visitante entra, tenta entender o serviço, e só depois solicita uma proposta. O site antigo apresentava conteúdo pouco escaneável, com CTAs escondidos abaixo de blocos decorativos.">I identified friction points across the funnel: visitor lands, tries to understand the service, and only then requests a proposal. The old site presented content that was hard to scan, with CTAs buried below decorative blocks.</p>
+          <p data-en="<strong>Solution:</strong> reposition CTAs above the fold, build a clear path to 'Request a proposal', and organize information progressively: value proposition, benefits, social proof, comparison and action." data-pt="<strong>Solução:</strong> reposicionar os CTAs acima da dobra, criar um caminho claro até 'Solicitar Proposta' e organizar as informações de forma progressiva: proposta de valor, benefícios, prova social, comparativo e ação."><strong>Solution:</strong> reposition CTAs above the fold, build a clear path to 'Request a proposal', and organize information progressively: value proposition, benefits, social proof, comparison and action.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dados" data-ruler-en="Data" data-ruler-pt="Dados" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Data and hypotheses" data-pt="Dados e hipóteses">Data and hypotheses</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Letting the data point at what actually hurt." data-pt="Deixando os dados apontarem onde de fato doía.">Letting the data point at what actually hurt.</h2>
+          <p data-en="To guide the redesign, I used a data-driven UX approach: traffic in GA4, heatmaps and session recordings in Clarity, and dashboards in Looker Studio tracked in real time with the marketing and growth team." data-pt="Para guiar o redesign, usei uma abordagem de UX data-driven: tráfego no GA4, mapas de calor e sessões no Clarity, e dashboards no Looker Studio acompanhados em tempo real com o time de marketing e growth.">To guide the redesign, I used a data-driven UX approach: traffic in GA4, heatmaps and session recordings in Clarity, and dashboards in Looker Studio tracked in real time with the marketing and growth team.</p>
+          <p data-en="The data showed three clear points to improve: the main CTA was hidden on mobile, the form was too long and caused abandonment, and the content felt generic, without conveying trust. From there, I formulated hypotheses and redesigned with a focus on clarity, credibility and less friction." data-pt="Os dados mostraram três pontos claros de melhoria: o CTA principal estava escondido em mobile, o formulário era longo e causava abandono, e o conteúdo parecia genérico, sem transmitir confiança. A partir disso, formulei hipóteses e redesenhei com foco em clareza, credibilidade e menos fricção.">The data showed three clear points to improve: the main CTA was hidden on mobile, the form was too long and caused abandonment, and the content felt generic, without conveying trust. From there, I formulated hypotheses and redesigned with a focus on clarity, credibility and less friction.</p>
+          <div class="stakeholder-row">
+            <span>GA4</span>
+            <span>Clarity</span>
+            <span>Looker Studio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seo" data-ruler-en="SEO" data-ruler-pt="SEO" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="SEO and content strategy" data-pt="SEO e conteúdo estratégico">SEO and content strategy</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Writing the way the client speaks, not the way the product is built." data-pt="Escrever como o cliente fala, não como o produto é feito.">Writing the way the client speaks, not the way the product is built.</h2>
+          <p data-en="I worked with the marketing team to align on B2B keywords, such as 'centralized device management', 'corporate smartphones' and 'device rental for companies'. I rewrote microcopy and headers based on UX writing principles and customer research, using the real language clients used day to day, like 'cash flow', 'up to date equipment' and 'fast replacement'." data-pt="Colaborei com o time de marketing para alinhar palavras-chave B2B, como 'gestão centralizada de celulares', 'smartphones corporativos' e 'locação de celulares para empresas'. Reescrevi microcopy e headers com base em UX writing e pesquisa com clientes, usando termos reais do dia a dia deles, como 'fluxo de caixa', 'equipamentos atualizados' e 'reposição rápida'.">I worked with the marketing team to align on B2B keywords, such as 'centralized device management', 'corporate smartphones' and 'device rental for companies'. I rewrote microcopy and headers based on UX writing principles and customer research, using the real language clients used day to day, like 'cash flow', 'up to date equipment' and 'fast replacement'.</p>
+          <p data-en="We also improved the semantic structure (H1, H2, meta tags) for SEO, which helped the content become easier to scan for people and search engines alike." data-pt="Também melhoramos a estrutura semântica (H1, H2, meta tags) para SEO, o que ajudou o conteúdo a ficar mais fácil de escanear tanto para pessoas quanto para buscadores.">We also improved the semantic structure (H1, H2, meta tags) for SEO, which helped the content become easier to scan for people and search engines alike.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section">
+      <div class="container">
+        <p class="eyebrow" data-en="Results" data-pt="Resultados">Results</p>
+        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="A site ready for an investor conversation, not just a customer one." data-pt="Um site pronto para conversa com investidor, não só com cliente.">A site ready for an investor conversation, not just a customer one.</h2>
+        <p style="max-width:620px;color:var(--ink-soft);" data-en="The end result is a more direct institutional website, with clear visual hierarchy and messaging that reflects the company's current stage: more solid, strategic and ready to grow." data-pt="O resultado final é um site institucional mais direto, com hierarquia visual clara e uma comunicação que reflete o estágio atual da empresa: mais sólida, estratégica e preparada para crescer.">The end result is a more direct institutional website, with clear visual hierarchy and messaging that reflects the company's current stage: more solid, strategic and ready to grow.</p>
+        <ul class="case-results">
+          <li data-en="3 hypotheses formulated from real behavioral data (GA4 + Clarity)" data-pt="3 hipóteses formuladas a partir de dados reais de comportamento (GA4 + Clarity)">3 hypotheses formulated from real behavioral data (GA4 + Clarity)</li>
+          <li data-en="1 funnel restructured, from first scroll to 'Request a proposal'" data-pt="1 funil reestruturado, do primeiro scroll até 'Solicitar Proposta'">1 funnel restructured, from first scroll to 'Request a proposal'</li>
+          <li data-en="B2B tone of voice and SEO redesigned for the corporate audience" data-pt="Tom de voz e SEO redesenhados para o público empresarial">B2B tone of voice and SEO redesigned for the corporate audience</li>
+        </ul>
+        <p class="case-note" data-en="<strong>Note:</strong> this case reflects the process and design decisions I led during the project. Leapfone's current website may have gone through further iterations since." data-pt="<strong>Nota:</strong> este case reflete o processo e as decisões de design conduzidas por mim durante o projeto. O site atual da Leapfone pode ter passado por outras iterações desde então."><strong>Note:</strong> this case reflects the process and design decisions I led during the project. Leapfone's current website may have gone through further iterations since.</p>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="container">
+        <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
+        <p data-en="There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio." data-pt="Tem também um case bancário com o Banco do Brasil e um case de programa de fidelidade com a Gol no portfólio.">There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio.</p>
+        <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year></span> Lucas Braga</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:lucasmateuspessoal@gmail.com">Email</a>
+      </div>
     </div>
-    <div class="lf-feature-image"><span class="tag">Funil B2B</span></div>
-  </div>
-</section>
+  </footer>
 
-<section class="lf-section">
-  <div class="container lf-grid-2">
-    <div class="lf-feature-image" style="order:2;"><span class="tag">GA4 + Clarity</span></div>
-    <div style="order:1;">
-      <span class="lf-chip">Dados e hipóteses</span>
-      <h2>Deixei os dados apontarem onde doía.</h2>
-      <p>Para guiar o redesign, usei uma abordagem de UX data-driven: tráfego no GA4, mapas de calor e sessões no Clarity, e dashboards no Looker Studio acompanhados em tempo real com o time de marketing e growth.</p>
-      <p>Os dados mostraram três pontos claros de melhoria: o CTA principal estava escondido em mobile, o formulário era longo e causava abandono, e o conteúdo parecia genérico, sem transmitir confiança. A partir disso, formulei hipóteses e redesenhei com foco em clareza, credibilidade e menos fricção.</p>
-    </div>
-  </div>
-</section>
-
-<section class="lf-section dim">
-  <div class="container lf-grid-2">
-    <div>
-      <span class="lf-chip">SEO e conteúdo</span>
-      <h2>Escrever como o cliente fala, não como o produto é feito.</h2>
-      <p>Colaborei com o time de marketing para alinhar palavras-chave B2B, como "gestão centralizada de celulares", "smartphones corporativos" e "locação de celulares para empresas". Reescrevi microcopy e headers com base em UX writing e pesquisa com clientes, usando termos reais do dia a dia deles: "fluxo de caixa", "equipamentos atualizados", "reposição rápida".</p>
-      <p>Também melhoramos a estrutura semântica (H1, H2, meta tags) para SEO, o que ajudou o conteúdo a ficar mais fácil de escanear tanto para pessoas quanto para buscadores.</p>
-    </div>
-    <div class="lf-feature-image"><span class="tag">UX Writing</span></div>
-  </div>
-</section>
-
-<section class="lf-section">
-  <div class="container">
-    <span class="lf-chip">Resultado</span>
-    <h2>Um site pronto pra conversa com investidor, não só com cliente.</h2>
-    <p>O resultado final é um site institucional mais direto, com hierarquia visual clara e uma comunicação que reflete o estágio atual da empresa: mais sólida, estratégica e preparada para crescer.</p>
-    <div class="lf-stats">
-      <div class="lf-stat"><strong>3 hipóteses</strong><span>formuladas a partir de dados reais de comportamento (GA4 + Clarity)</span></div>
-      <div class="lf-stat"><strong>1 funil</strong><span>reestruturado, do primeiro scroll até "Solicitar Proposta"</span></div>
-      <div class="lf-stat"><strong>B2B</strong><span>tom de voz e SEO redesenhados para o público empresarial</span></div>
-    </div>
-    <p class="lf-note"><strong>Nota:</strong> este case reflete o processo e as decisões de design conduzidas por mim durante o projeto. O site atual da Leapfone pode ter passado por outras iterações desde então.</p>
-  </div>
-</section>
-
-<section class="lf-cta">
-  <div class="container">
-    <h2>Quer ver outro projeto?</h2>
-    <p>Tenho mais um case bancário e um do programa de fidelidade da Gol no portfólio.</p>
-    <a class="lf-btn" href="../index.html#projetos">Ver todos os projetos</a>
-  </div>
-</section>
-
-<footer class="lf-footer">
-  Case de portfólio por Lucas Braga
-</footer>
-
+  <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,15 +1,73 @@
 // =========================================================
-// lucasbraga - portfolio interactions
+// lucasbraga - shared site interactions
+// Loaded on index.html and on every page under /projetos/ so
+// navigation, language toggle and motion behave the same way
+// everywhere (same design system, same interactions).
 // =========================================================
 
+let currentLang = localStorage.getItem('lb_lang') || 'en';
+let currentSectionId = null;
+
+const STRINGS = {
+  sending: { en: 'Sending...', pt: 'Enviando...' },
+  sent: { en: 'Message sent, I will get back to you soon.', pt: 'Mensagem enviada, retorno em breve.' },
+  formNotConfigured: { en: 'Set up your Formspree endpoint (see the README).', pt: 'Configure seu endpoint do Formspree (veja o README).' },
+  sendError: { en: "Could not send it right now. Please try again or email me directly.", pt: 'Não consegui enviar agora. Tenta de novo ou manda um e-mail direto.' },
+  openMenu: { en: 'Open menu', pt: 'Abrir menu' },
+  closeMenu: { en: 'Close menu', pt: 'Fechar menu' }
+};
+function t(key){
+  return (STRINGS[key] && STRINGS[key][currentLang]) || (STRINGS[key] && STRINGS[key].en) || '';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initLangToggle();
   initNavToggle();
   initScrollSpy();
   initReveal();
-  initProjectModals();
   initContactForm();
   setYear();
 });
+
+/* ---------- language toggle (shared across all pages) ---------- */
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const value = lang === 'pt' ? (el.getAttribute('data-pt') ?? el.getAttribute('data-en')) : el.getAttribute('data-en');
+    if(value != null) el.innerHTML = value;
+  });
+
+  document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+    const value = lang === 'pt' ? (el.getAttribute('data-pt-placeholder') ?? '') : el.getAttribute('data-en-placeholder');
+    el.setAttribute('placeholder', value || '');
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.langSwitch === lang);
+  });
+
+  // refresh the ruler label for whichever section is currently active
+  const rulerLabel = document.querySelector('.ruler-label');
+  if(rulerLabel){
+    const target = currentSectionId ? document.getElementById(currentSectionId) : document.querySelector('main section[id]');
+    if(target) rulerLabel.textContent = (lang === 'pt' ? target.dataset.rulerPt : target.dataset.rulerEn) || target.id;
+  }
+
+  const toggle = document.querySelector('.nav-toggle');
+  if(toggle) toggle.setAttribute('aria-label', t(toggle.classList.contains('open') ? 'closeMenu' : 'openMenu'));
+}
+
+function initLangToggle(){
+  applyLang(currentLang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      localStorage.setItem('lb_lang', btn.dataset.langSwitch);
+      applyLang(btn.dataset.langSwitch);
+    });
+  });
+}
 
 /* ---------- mobile nav ---------- */
 function initNavToggle(){
@@ -21,6 +79,7 @@ function initNavToggle(){
     const isOpen = links.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', t(isOpen ? 'closeMenu' : 'openMenu'));
   });
 
   links.querySelectorAll('a').forEach(a => {
@@ -41,12 +100,13 @@ function initScrollSpy(){
   if(sections.length === 0) return;
 
   const setActive = (id) => {
+    currentSectionId = id;
     navLinks.forEach(l => {
       l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
     });
     if(rulerLabel){
       const target = document.getElementById(id);
-      const label = target?.dataset.rulerLabel || id;
+      const label = (currentLang === 'pt' ? target?.dataset.rulerPt : target?.dataset.rulerEn) || id;
       rulerLabel.textContent = label;
     }
   };
@@ -94,125 +154,7 @@ function initReveal(){
   items.forEach(i => observer.observe(i));
 }
 
-/* ---------- project case-study modal ---------- */
-// The Banco do Brasil case stays as an in-page modal since it's an internal
-// banking flow with no public site of its own to theme a dedicated page
-// after. Leapfone and Gol Smiles+ each have their own themed page instead,
-// linked directly from their project cards in index.html.
-const PROJECTS = {
-  bb: {
-    kicker: 'Case study 01 · App bancário',
-    title: 'Banco do Brasil × Leapfone',
-    summary: 'Estruturação do fluxo de assinatura de smartphones para clientes Ourocard do BB, do discovery ao handoff com engenharia.',
-    body: `
-      <h4>Contexto</h4>
-      <p>O <strong>Banco do Brasil</strong>, em parceria com a startup <strong>Leapfone</strong>, passou a oferecer aos seus clientes a possibilidade de alugar smartphones por assinatura, com condições especiais e benefícios exclusivos. O desafio era estruturar um fluxo digital eficiente e intuitivo para contratação do serviço, acessível via app e site, garantindo clareza, segurança e adesão.</p>
-      <p><strong>Objetivo:</strong> projetar uma jornada fluida e confiável para a assinatura de smartphones, respeitando as diretrizes do BB, as particularidades do modelo BYOD e integrando a oferta da Leapfone à experiência digital dos clientes.</p>
-
-      <figure class="modal-figure">
-        <img src="assets/img/bb-app-mockup.jpg" alt="Tela inicial do app do Banco do Brasil com o novo módulo de assinatura de smartphones" loading="lazy">
-        <figcaption>Ponto de entrada do serviço dentro do app do BB.</figcaption>
-      </figure>
-
-      <h4>Discovery</h4>
-      <p>Analisei o cenário de mercado e modelos de aluguel de dispositivos de concorrentes diretos (Itaú, Claro, Vivo, Amazon, Apple Trade-in), levantando aprendizados sobre tom de comunicação, etapas de decisão e fatores de confiança.</p>
-      <p>Mapeei, com o time de produto, os pontos de entrada (app, site, Ponto BB), as etapas decisórias (aparelho, plano, benefícios) e as principais dores: <em>"é aluguel ou compra?"</em>, <em>"é seguro?"</em>, <em>"qual o plano ideal?"</em>.</p>
-      <p>A partir de dados do time e entrevistas rápidas com clientes do perfil Ourocard, priorizamos os fluxos para três perfis: quem busca sempre o último modelo, quem tem receio de alugar, e quem busca custo-benefício e praticidade.</p>
-
-      <h4>Estruturação da solução</h4>
-      <ul>
-        <li>Fluxos de comparação de planos e adição de benefícios extras</li>
-        <li>Fechamento e pagamento</li>
-        <li>Pós-venda e gerenciamento da assinatura</li>
-      </ul>
-      <p>Toda a estruturação foi feita em FigJam + Figma, validando continuamente com produto e engenharia.</p>
-
-      <div class="modal-compare">
-        <figure>
-          <img src="assets/img/bb-catalogo.jpg" alt="Catálogo de aparelhos disponíveis para assinatura" loading="lazy">
-          <figcaption>Escolha do aparelho</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/bb-produto.jpg" alt="Tela de configuração do aparelho, com opções de cor, armazenamento e plano" loading="lazy">
-          <figcaption>Configuração do plano</figcaption>
-        </figure>
-      </div>
-
-      <h4>Testes e validação</h4>
-      <p>Conduzi sessões de design review com o time de design e produto, refinando microinterações e mensagens de erro. Em parceria com o time, aplicamos testes de usabilidade com usuários reais, o que gerou melhorias em três frentes: clareza sobre o modelo de aluguel (vs. compra), confiança na oferta, com termos exibidos em linguagem acessível, e simplificação da etapa de pagamento.</p>
-
-      <div class="modal-compare">
-        <figure>
-          <img src="assets/img/bb-timeline.jpg" alt="Tela explicando o funcionamento da assinatura em três etapas ao longo do tempo" loading="lazy">
-          <figcaption>Explicando o modelo</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/bb-comparativo.jpg" alt="Comparativo entre assinar e comprar o aparelho" loading="lazy">
-          <figcaption>Assinar x comprar</figcaption>
-        </figure>
-      </div>
-
-      <h4>Handoff</h4>
-      <p>Entreguei documentação funcional detalhada por tela: regras de negócio, comportamentos esperados em cada etapa, estágios de integração com a Leapfone e componentes usados do design system. Tudo direto no Figma, com specs interativas para os squads de engenharia.</p>
-
-      <h4>Resultados</h4>
-      <ul class="modal-results">
-        <li>Redução no tempo médio de contratação no protótipo validado</li>
-        <li>Melhora na compreensão da oferta após ajustes de microcopy</li>
-        <li>Prototipação validada em 3 ciclos rápidos, com boa receptividade</li>
-        <li>Fluxo implementado no app do BB, com previsão de expansão para outros canais</li>
-      </ul>
-
-      <p class="modal-note"><strong>Nota:</strong> algumas informações de negócio foram adaptadas ou camufladas para preservar dados sensíveis e respeitar acordos de confidencialidade. A essência do projeto, os processos de design e as soluções propostas foram mantidos para fins de apresentação.</p>
-    `
-  }
-};
-
-function initProjectModals(){
-  const overlay = document.querySelector('.modal-overlay');
-  const modal = document.querySelector('.modal');
-  const modalInner = document.querySelector('.modal-inner');
-  const triggers = document.querySelectorAll('[data-project]');
-  if(!overlay || !modal || !modalInner) return;
-
-  const openModal = (key) => {
-    const data = PROJECTS[key];
-    if(!data || data.locked) return;
-
-    modalInner.innerHTML = `
-      <button class="modal-close" aria-label="Fechar case study" data-close>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg>
-      </button>
-      <p class="modal-kicker">${data.kicker}</p>
-      <h2>${data.title}</h2>
-      <p class="modal-summary">${data.summary}</p>
-      <div class="modal-body">${data.body}</div>
-    `;
-    overlay.classList.add('open');
-    document.body.classList.add('modal-locked');
-    modalInner.querySelector('[data-close]').addEventListener('click', closeModal);
-    modal.scrollTop = 0;
-  };
-
-  const closeModal = () => {
-    overlay.classList.remove('open');
-    document.body.classList.remove('modal-locked');
-  };
-
-  triggers.forEach(t => {
-    t.addEventListener('click', () => openModal(t.dataset.project));
-  });
-
-  overlay.addEventListener('click', (e) => {
-    if(e.target === overlay) closeModal();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') closeModal();
-  });
-}
-
-/* ---------- contact form (Formspree) ---------- */
+/* ---------- contact form (Formspree), index.html only ---------- */
 function initContactForm(){
   const form = document.querySelector('.contact-form');
   if(!form) return;
@@ -223,13 +165,13 @@ function initContactForm(){
     e.preventDefault();
 
     if(form.action.includes('SEU_FORM_ID')){
-      msg.textContent = 'Configure seu endpoint do Formspree em contact-form (veja o README).';
+      msg.textContent = t('formNotConfigured');
       msg.className = 'form-msg error';
       return;
     }
 
     submitBtn.disabled = true;
-    msg.textContent = 'Enviando…';
+    msg.textContent = t('sending');
     msg.className = 'form-msg';
 
     try{
@@ -239,14 +181,14 @@ function initContactForm(){
         headers: { Accept: 'application/json' }
       });
       if(res.ok){
-        msg.textContent = 'Mensagem enviada. Retorno em breve.';
+        msg.textContent = t('sent');
         msg.className = 'form-msg success';
         form.reset();
       } else {
         throw new Error('request failed');
       }
     } catch(err){
-      msg.textContent = 'Não consegui enviar agora. Tenta de novo ou manda um e-mail direto.';
+      msg.textContent = t('sendError');
       msg.className = 'form-msg error';
     } finally {
       submitBtn.disabled = false;
