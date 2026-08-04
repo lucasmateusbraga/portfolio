@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unimed: Scaling a Healthcare App · Lucas Braga</title>
+  <meta name="description" content="Case study: redesigning Unimed's healthcare app and building a design system for 50K+ users, including the UniFit health tracker.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <aside class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <div class="ruler-progress"></div>
+      <span class="ruler-label">Overview</span>
+    </div>
+  </aside>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html#home" class="logo">lucas<span>braga</span></a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="../index.html#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="../index.html#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="../index.html#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#projetos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
+        </a>
+        <p class="eyebrow" data-en="Project 04 · Healthcare app" data-pt="Projeto 04 · Aplicativo de saúde">Project 04 · Healthcare app</p>
+        <h1 data-en="Unimed: Scaling a Healthcare App for 50K+ Users" data-pt="Unimed: Escalando um app de saúde para +50 mil usuários">Unimed: Scaling a Healthcare App for 50K+ Users</h1>
+        <p class="lead" data-en="Unimed's app is where members book appointments, check exam results, manage vaccines, and track their health through UniFit. My job was to lead the redesign and build the design system that let the whole product scale without falling apart." data-pt="O app da Unimed é onde o beneficiário marca consulta, vê resultado de exame, gerencia vacinas e acompanha a própria saúde pelo UniFit. Meu trabalho foi liderar o redesign e construir o design system que permitiu o produto inteiro escalar sem se desmontar.">Unimed's app is where members book appointments, check exam results, manage vaccines, and track their health through UniFit. My job was to lead the redesign and build the design system that let the whole product scale without falling apart.</p>
+        <div class="project-meta">
+          <div>
+            <span data-en="Role" data-pt="Papel">Role</span>
+            <strong data-en="Lead Product Designer, UX Research & Design Systems" data-pt="Product Designer líder, UX Research e Design Systems">Lead Product Designer, UX Research & Design Systems</strong>
+          </div>
+          <div>
+            <span data-en="Scale" data-pt="Escala">Scale</span>
+            <strong data-en="50,000+ active users" data-pt="+50 mil usuários ativos">50,000+ active users</strong>
+          </div>
+          <div>
+            <span data-en="Scope" data-pt="Escopo">Scope</span>
+            <strong data-en="Redesign, design system, A/B testing" data-pt="Redesign, design system, testes A/B">Redesign, design system, A/B testing</strong>
+          </div>
+          <div>
+            <span data-en="Platform" data-pt="Plataforma">Platform</span>
+            <strong data-en="App (iOS & Android)" data-pt="App (iOS e Android)">App (iOS & Android)</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A super app that grew faster than its design language." data-pt="Um super app que cresceu mais rápido do que sua linguagem de design.">A super app that grew faster than its design language.</h2>
+          <p data-en="The app had grown feature by feature over the years, consultations, exams, prescriptions, vaccines, a health tracker, a psychological support channel, each one shipped by a different squad, on its own timeline. The result was an app that technically worked, but felt like several different products stitched together." data-pt="O app tinha crescido funcionalidade por funcionalidade ao longo dos anos, consultas, exames, receitas, vacinas, um monitor de saúde, um canal de apoio psicológico, cada um lançado por um squad diferente, no seu próprio ritmo. O resultado era um app que funcionava tecnicamente, mas parecia vários produtos diferentes costurados juntos.">The app had grown feature by feature over the years, consultations, exams, prescriptions, vaccines, a health tracker, a psychological support channel, each one shipped by a different squad, on its own timeline. The result was an app that technically worked, but felt like several different products stitched together.</p>
+          <p data-en="<strong>The problem:</strong> icon styles, card layouts and spacing were inconsistent from screen to screen, and some flows had literal dead ends, empty states with a single card floating in an otherwise blank screen. That inconsistency was not just a visual issue, it was slowing every squad down, since every new feature meant deciding the visual language from scratch." data-pt="<strong>O problema:</strong> estilos de ícone, layout de cards e espaçamento eram inconsistentes de tela pra tela, e alguns fluxos tinham becos sem saída literais, estados vazios com um único card flutuando numa tela praticamente em branco. Essa inconsistência não era só uma questão visual, ela estava desacelerando cada squad, porque cada funcionalidade nova significava decidir a linguagem visual do zero."><strong>The problem:</strong> icon styles, card layouts and spacing were inconsistent from screen to screen, and some flows had literal dead ends, empty states with a single card floating in an otherwise blank screen. That inconsistency was not just a visual issue, it was slowing every squad down, since every new feature meant deciding the visual language from scratch.</p>
+
+          <div class="case-compare">
+            <figure>
+              <img src="../assets/img/unimed-old-minhasaude.jpg" alt="Old Minha Saúde screen with inconsistent icon styles and uneven grid">
+              <figcaption data-en="Before" data-pt="Antes">Before</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/unimed-old-meuplano.jpg" alt="Old Meu Plano screen with a broken layout and a single floating card">
+              <figcaption data-en="Before" data-pt="Antes">Before</figcaption>
+            </figure>
+          </div>
+          <p class="case-note" data-en="Two real screens from the legacy app: mismatched icon styles and an information architecture that occasionally broke down into near-empty screens." data-pt="Duas telas reais do app legado: estilos de ícone incompatíveis entre si e uma arquitetura de informação que ocasionalmente quebrava em telas quase vazias.">Two real screens from the legacy app: mismatched icon styles and an information architecture that occasionally broke down into near-empty screens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="designsystem" data-ruler-en="Design system" data-ruler-pt="Design system" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Design system" data-pt="Design system">Design system</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Fixing the screens was easy. Fixing why they diverged was the real job." data-pt="Corrigir as telas era fácil. Corrigir o motivo de elas terem divergido era o trabalho real.">Fixing the screens was easy. Fixing why they diverged was the real job.</h2>
+          <p data-en="Redesigning individual screens would not have solved anything, the next squad would have drifted from them again within a quarter. So I led the creation of a scalable design system: tokens, components and usage guidelines shared across every squad working on the app." data-pt="Redesenhar telas individuais não resolveria nada, o próximo squad se afastaria delas de novo dentro de um trimestre. Por isso liderei a criação de um design system escalável: tokens, componentes e diretrizes de uso compartilhados entre todos os squads que trabalhavam no app.">Redesigning individual screens would not have solved anything, the next squad would have drifted from them again within a quarter. So I led the creation of a scalable design system: tokens, components and usage guidelines shared across every squad working on the app.</p>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="n">01</span>
+              <div><strong data-en="Audit" data-pt="Auditoria">Audit</strong><p data-en="Mapped every screen in production, cataloguing every icon style, card pattern and spacing value actually in use, not just the ones in the old style guide." data-pt="Mapeei todas as telas em produção, catalogando cada estilo de ícone, padrão de card e valor de espaçamento realmente em uso, não só os que estavam no guia de estilo antigo.">Mapped every screen in production, cataloguing every icon style, card pattern and spacing value actually in use, not just the ones in the old style guide.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">02</span>
+              <div><strong data-en="Define" data-pt="Definição">Define</strong><p data-en="Consolidated everything into a single token set and a component library, with clear rules for when and how each one should be used." data-pt="Consolidei tudo em um único conjunto de tokens e uma biblioteca de componentes, com regras claras de quando e como cada um deveria ser usado.">Consolidated everything into a single token set and a component library, with clear rules for when and how each one should be used.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">03</span>
+              <div><strong data-en="Roll out" data-pt="Adoção">Roll out</strong><p data-en="Worked directly with each squad during adoption, reviewing their screens against the system instead of just publishing documentation and hoping it would be followed." data-pt="Trabalhei diretamente com cada squad durante a adoção, revisando as telas deles em relação ao design system, em vez de só publicar documentação e esperar que fosse seguida.">Worked directly with each squad during adoption, reviewing their screens against the system instead of just publishing documentation and hoping it would be followed.</p></div>
+            </div>
+          </div>
+
+          <p data-en="The result: inconsistencies and delivery time both dropped by 40% across squads, since designers stopped reinventing basic patterns for every new feature." data-pt="O resultado: inconsistências e tempo de entrega caíram 40% entre os squads, já que os designers deixaram de reinventar padrões básicos pra cada funcionalidade nova.">The result: inconsistencies and delivery time both dropped by 40% across squads, since designers stopped reinventing basic patterns for every new feature.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="homescreen" data-ruler-en="Home screen" data-ruler-pt="Tela inicial" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="A/B testing the home screen" data-pt="Teste A/B da tela inicial">A/B testing the home screen</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Conversational or task-oriented? We actually tested it." data-pt="Conversacional ou orientado a tarefa? A gente testou de verdade.">Conversational or task-oriented? We actually tested it.</h2>
+          <p data-en="One open question going into the redesign was how directive the home screen should feel. We built two real directions and tested them: version A led with a conversational, chat-style entry point, version B led with a task-oriented card dashboard." data-pt="Uma pergunta aberta no início do redesign era o quão diretiva a tela inicial deveria parecer. Construímos duas direções reais e testamos: a versão A abria com um ponto de entrada conversacional, no estilo chat, a versão B abria com um dashboard de cards orientado a tarefa.">One open question going into the redesign was how directive the home screen should feel. We built two real directions and tested them: version A led with a conversational, chat-style entry point, version B led with a task-oriented card dashboard.</p>
+
+          <div class="case-compare">
+            <figure>
+              <img src="../assets/img/unimed-home-a-chat.jpg" alt="Version A: conversational chat-led home screen concept">
+              <figcaption data-en="Version A · Conversational" data-pt="Versão A · Conversacional">Version A · Conversational</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/unimed-home-b-cards.jpg" alt="Version B: task-oriented card dashboard home screen">
+              <figcaption data-en="Version B · Task-oriented" data-pt="Versão B · Orientada a tarefa">Version B · Task-oriented</figcaption>
+            </figure>
+          </div>
+
+          <p data-en="Version B won for the home screen: returning members overwhelmingly wanted to jump straight to a specific service, not have a conversation to get there. But the conversational pattern was not wasted, we kept it for a context where it genuinely fit better: the psychological support chat, a sensitive entry point where guiding someone through a few questions before showing options actually made people more comfortable, not less efficient." data-pt="A versão B venceu pra tela inicial: o beneficiário recorrente queria ir direto a um serviço específico, não ter uma conversa pra chegar até lá. Mas o padrão conversacional não foi desperdiçado, mantivemos ele num contexto em que ele fazia mais sentido: o chat de apoio psicológico, um ponto de entrada sensível onde guiar a pessoa por algumas perguntas antes de mostrar opções deixava as pessoas mais confortáveis, não menos eficientes.">Version B won for the home screen: returning members overwhelmingly wanted to jump straight to a specific service, not have a conversation to get there. But the conversational pattern was not wasted, we kept it for a context where it genuinely fit better: the psychological support chat, a sensitive entry point where guiding someone through a few questions before showing options actually made people more comfortable, not less efficient.</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/unimed-home-a-chat.jpg" alt="Psychological support chat, using the conversational pattern from version A"></div>
+              <figcaption data-en="Where the conversational pattern lives today" data-pt="Onde o padrão conversacional vive hoje">Where the conversational pattern lives today</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funcionalidades" data-ruler-en="Features" data-ruler-pt="Funcionalidades" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Core features, rebuilt on the system" data-pt="Funcionalidades principais, reconstruídas sobre o sistema">Core features, rebuilt on the system</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Same design system, different jobs to do." data-pt="Mesmo design system, trabalhos diferentes pra fazer.">Same design system, different jobs to do.</h2>
+          <p data-en="Once the system was in place, we rebuilt the core flows on top of it: booking and tracking consultations, managing vaccine records, and UniFit, a health tracker that pulls together steps, sleep, blood pressure and heart rate in one view." data-pt="Uma vez que o sistema estava em vigor, reconstruímos os fluxos principais sobre ele: marcação e acompanhamento de consultas, gestão do cartão de vacinas, e o UniFit, um monitor de saúde que reúne passos, sono, pressão e batimentos numa única visão.">Once the system was in place, we rebuilt the core flows on top of it: booking and tracking consultations, managing vaccine records, and UniFit, a health tracker that pulls together steps, sleep, blood pressure and heart rate in one view.</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/unimed-consultas.jpg" alt="Consultations list screen"></div>
+              <figcaption data-en="Consultations" data-pt="Consultas">Consultations</figcaption>
+            </div>
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/unimed-vacinas.jpg" alt="Vaccine records screen"></div>
+              <figcaption data-en="Vaccine records" data-pt="Cartão de vacinas">Vaccine records</figcaption>
+            </div>
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/unimed-unifit.jpg" alt="UniFit health tracker screen"></div>
+              <figcaption>UniFit</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section">
+      <div class="container">
+        <p class="eyebrow" data-en="Results and reflection" data-pt="Resultados e reflexão">Results and reflection</p>
+        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="A system that outlives the redesign." data-pt="Um sistema que sobrevive ao redesign.">A system that outlives the redesign.</h2>
+        <ul class="case-results">
+          <li data-en="50,000+ users impacted across the redesigned flows" data-pt="+50 mil usuários impactados nos fluxos redesenhados">50,000+ users impacted across the redesigned flows</li>
+          <li data-en="40% reduction in inconsistencies and delivery time across squads" data-pt="Redução de 40% em inconsistências e tempo de entrega entre squads">40% reduction in inconsistencies and delivery time across squads</li>
+          <li data-en="One shared design system adopted across every squad" data-pt="Um design system único adotado por todos os squads">One shared design system adopted across every squad</li>
+          <li data-en="Onboarding and navigation flow improved for the UniFit tracker" data-pt="Onboarding e fluxo de navegação melhorados no UniFit">Onboarding and navigation flow improved for the UniFit tracker</li>
+        </ul>
+        <p data-en="The lesson that stuck with me: a redesign that only touches pixels gets undone by the next roadmap. What actually lasts is the system underneath it, and the relationships with the squads who have to live with it every day." data-pt="A lição que ficou pra mim: um redesign que só toca pixel é desfeito pelo próximo roadmap. O que realmente dura é o sistema por baixo dele, e o relacionamento com os squads que precisam viver com ele todo dia.">The lesson that stuck with me: a redesign that only touches pixels gets undone by the next roadmap. What actually lasts is the system underneath it, and the relationships with the squads who have to live with it every day.</p>
+        <p class="case-note" data-en="<strong>Note:</strong> some business information was adapted to preserve confidential details. Names and sample data shown in the screens are for demonstration purposes only." data-pt="<strong>Nota:</strong> algumas informações de negócio foram adaptadas para preservar detalhes confidenciais. Nomes e dados de exemplo mostrados nas telas são apenas para fins de demonstração."><strong>Note:</strong> some business information was adapted to preserve confidential details. Names and sample data shown in the screens are for demonstration purposes only.</p>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="container">
+        <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
+        <p data-en="There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio." data-pt="Tem também um case bancário com o Banco do Brasil e um case de programa de fidelidade com a Gol no portfólio.">There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio.</p>
+        <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year></span> Lucas Braga</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:lucasmateuspessoal@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

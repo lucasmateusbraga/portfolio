@@ -9,10 +9,6 @@ let currentLang = localStorage.getItem('lb_lang') || 'en';
 let currentSectionId = null;
 
 const STRINGS = {
-  sending: { en: 'Sending...', pt: 'Enviando...' },
-  sent: { en: 'Message sent, I will get back to you soon.', pt: 'Mensagem enviada, retorno em breve.' },
-  formNotConfigured: { en: 'Set up your Formspree endpoint (see the README).', pt: 'Configure seu endpoint do Formspree (veja o README).' },
-  sendError: { en: "Could not send it right now. Please try again or email me directly.", pt: 'Não consegui enviar agora. Tenta de novo ou manda um e-mail direto.' },
   openMenu: { en: 'Open menu', pt: 'Abrir menu' },
   closeMenu: { en: 'Close menu', pt: 'Fechar menu' }
 };
@@ -28,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   boot('nav toggle', initNavToggle);
   boot('scroll spy', initScrollSpy);
   boot('reveal', initReveal);
-  boot('contact form', initContactForm);
   boot('year', setYear);
 });
 
@@ -158,46 +153,7 @@ function initReveal(){
 }
 
 /* ---------- contact form (Formspree), index.html only ---------- */
-function initContactForm(){
-  const form = document.querySelector('.contact-form');
-  if(!form) return;
-  const msg = form.querySelector('.form-msg');
-  const submitBtn = form.querySelector('button[type="submit"]');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    if(form.action.includes('SEU_FORM_ID')){
-      msg.textContent = t('formNotConfigured');
-      msg.className = 'form-msg error';
-      return;
-    }
-
-    submitBtn.disabled = true;
-    msg.textContent = t('sending');
-    msg.className = 'form-msg';
-
-    try{
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      if(res.ok){
-        msg.textContent = t('sent');
-        msg.className = 'form-msg success';
-        form.reset();
-      } else {
-        throw new Error('request failed');
-      }
-    } catch(err){
-      msg.textContent = t('sendError');
-      msg.className = 'form-msg error';
-    } finally {
-      submitBtn.disabled = false;
-    }
-  });
-}
+/* ---------- contact form removed: email + WhatsApp cards used instead ---------- */
 
 function setYear(){
   const el = document.querySelector('[data-year]');
