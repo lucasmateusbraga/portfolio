@@ -21,12 +21,15 @@ function t(key){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLangToggle();
-  initNavToggle();
-  initScrollSpy();
-  initReveal();
-  initContactForm();
-  setYear();
+  const boot = (name, fn) => {
+    try { fn(); } catch (err) { console.error(`[lucasbraga] ${name} failed:`, err); }
+  };
+  boot('lang toggle', initLangToggle);
+  boot('nav toggle', initNavToggle);
+  boot('scroll spy', initScrollSpy);
+  boot('reveal', initReveal);
+  boot('contact form', initContactForm);
+  boot('year', setYear);
 });
 
 /* ---------- language toggle (shared across all pages) ---------- */
