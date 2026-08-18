@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIB Bank: Improving Pay & Transfer · Lucas Braga</title>
+  <meta name="description" content="Case study: modernizing AIB Bank's Pay & Transfer flow, informed by competitive benchmarking against Revolut, N26 and Monzo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <aside class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <div class="ruler-progress"></div>
+      <span class="ruler-label">Overview</span>
+    </div>
+  </aside>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html#home" class="logo">lucas<span>braga</span></a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html#sobre" data-en="About" data-pt="Sobre">About</a></li>
+          <li><a href="../index.html#projetos" data-en="Projects" data-pt="Projetos">Projects</a></li>
+          <li><a href="../index.html#depoimentos" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a></li>
+          <li><a href="../index.html#contato" data-en="Contact" data-pt="Contato">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" aria-label="Language">
+          <button class="lang-btn" data-lang-switch="en" aria-label="English">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang-switch="pt" aria-label="Português">🇧🇷 PT</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#projetos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
+        </a>
+        <p class="eyebrow" data-en="Project 01 · Digital banking" data-pt="Projeto 01 · Banco digital">Project 01 · Digital banking</p>
+        <h1 data-en="AIB Bank: Improving Pay & Transfer" data-pt="AIB Bank: Melhorando o Pay & Transfer">AIB Bank: Improving Pay & Transfer</h1>
+        <p class="lead" data-en="AIB is one of Ireland's largest banks, and its Pay & Transfer flow is one of the most used features in the app. My work was to audit that flow against the bar that challenger banks had quietly reset across Europe, and propose a version that felt just as fast, without losing what a regulated bank has to get right." data-pt="O AIB é um dos maiores bancos da Irlanda, e o fluxo de Pay & Transfer é uma das funcionalidades mais usadas do app. Meu trabalho foi auditar esse fluxo em relação ao padrão que os bancos digitais desafiantes silenciosamente redefiniram na Europa, e propor uma versão igualmente rápida, sem perder o que um banco regulado precisa acertar.">AIB is one of Ireland's largest banks, and its Pay & Transfer flow is one of the most used features in the app. My work was to audit that flow against the bar that challenger banks had quietly reset across Europe, and propose a version that felt just as fast, without losing what a regulated bank has to get right.</p>
+        <div class="project-meta">
+          <div>
+            <span data-en="Role" data-pt="Papel">Role</span>
+            <strong data-en="Product Designer" data-pt="Product Designer">Product Designer</strong>
+          </div>
+          <div>
+            <span data-en="Category" data-pt="Categoria">Category</span>
+            <strong data-en="Retail banking, Ireland" data-pt="Banking, Irlanda">Retail banking, Ireland</strong>
+          </div>
+          <div>
+            <span data-en="Scope" data-pt="Escopo">Scope</span>
+            <strong data-en="UX audit, benchmarking, interaction design" data-pt="Auditoria de UX, benchmarking, design de interação">UX audit, benchmarking, interaction design</strong>
+          </div>
+          <div>
+            <span data-en="Platform" data-pt="Plataforma">Platform</span>
+            <strong data-en="App (iOS & Android)" data-pt="App (iOS e Android)">App (iOS & Android)</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A core banking flow, held to a challenger-bank bar." data-pt="Um fluxo bancário essencial, medido pela régua dos bancos desafiantes.">A core banking flow, held to a challenger-bank bar.</h2>
+          <p data-en="Pay & Transfer is where a banking app either earns trust or loses patience: it is where members move their own money between accounts, pay someone new, pay a bill, or top up a phone. AIB's version worked, but it had been designed in an era before Revolut, N26 and Monzo reset what 'fast' means for a transfer." data-pt="Pay & Transfer é onde um app bancário ganha confiança ou perde a paciência do cliente: é onde o correntista movimenta o próprio dinheiro entre contas, paga alguém novo, paga uma conta ou recarrega o celular. A versão do AIB funcionava, mas tinha sido desenhada numa época anterior ao Revolut, N26 e Monzo redefinirem o que 'rápido' significa pra uma transferência.">Pay & Transfer is where a banking app either earns trust or loses patience: it is where members move their own money between accounts, pay someone new, pay a bill, or top up a phone. AIB's version worked, but it had been designed in an era before Revolut, N26 and Monzo reset what 'fast' means for a transfer.</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/aib-pay-transfer.jpg" alt="AIB Bank app Pay and Transfer menu"></div>
+              <figcaption data-en="Pay & Transfer entry point" data-pt="Ponto de entrada do Pay & Transfer">Pay & Transfer entry point</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="discovery" data-ruler-en="Discovery" data-ruler-pt="Discovery" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Journey audit" data-pt="Auditoria da jornada">Journey audit</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Three moments where the flow quietly lost people." data-pt="Três momentos em que o fluxo perdia gente silenciosamente.">Three moments where the flow quietly lost people.</h2>
+          <p data-en="I mapped the existing journey end to end, from choosing a payee to confirming a transfer, looking for the exact steps where hesitation or drop-off was most likely." data-pt="Mapeei a jornada existente de ponta a ponta, da escolha do destinatário à confirmação da transferência, procurando os pontos exatos onde a hesitação ou o abandono eram mais prováveis.">I mapped the existing journey end to end, from choosing a payee to confirming a transfer, looking for the exact steps where hesitation or drop-off was most likely.</p>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="n">01</span>
+              <div><strong data-en="Adding a new payee was intimidating" data-pt="Adicionar um destinatário novo intimidava">Adding a new payee was intimidating</strong><p data-en="IBAN format guidance was unclear, with no real-time validation, so people only found out they had made a mistake after submitting." data-pt="A orientação de formato do IBAN era pouco clara, sem validação em tempo real, então a pessoa só descobria o erro depois de enviar.">IBAN format guidance was unclear, with no real-time validation, so people only found out they had made a mistake after submitting.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">02</span>
+              <div><strong data-en="The flow gave almost no feedback" data-pt="O fluxo quase não dava retorno visual">The flow gave almost no feedback</strong><p data-en="Fields filled in silently, with no confirmation that a step had gone well, which is a poor fit for a task that involves someone's money." data-pt="Os campos eram preenchidos em silêncio, sem confirmação de que a etapa tinha ido bem, o que é ruim numa tarefa que envolve o dinheiro de alguém.">Fields filled in silently, with no confirmation that a step had gone well, which is a poor fit for a task that involves someone's money.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">03</span>
+              <div><strong data-en="The daily limit felt like a wall, not a guardrail" data-pt="O limite diário parecia um muro, não uma proteção">The daily limit felt like a wall, not a guardrail</strong><p data-en="At €10,000 a day, the limit is a reasonable security measure, but the app offered no clear, self-service way to raise it when a real need came up." data-pt="Em €10.000 por dia, o limite é uma medida de segurança razoável, mas o app não oferecia uma forma clara e self-service de aumentá-lo quando surgia uma necessidade real.">At €10,000 a day, the limit is a reasonable security measure, but the app offered no clear, self-service way to raise it when a real need came up.</p></div>
+            </div>
+          </div>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/aib-payment-limit.jpg" alt="AIB Bank daily payment limit screen"></div>
+              <figcaption data-en="The €10,000 daily limit, with no path to increase it in context" data-pt="O limite diário de €10.000, sem caminho pra aumentar dentro do próprio contexto">The €10,000 daily limit, with no path to increase it in context</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="melhorias" data-ruler-en="Improvements" data-ruler-pt="Melhorias" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Proposed improvements" data-pt="Melhorias propostas">Proposed improvements</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Make the safe path also the fast path." data-pt="Fazer do caminho seguro também o caminho rápido.">Make the safe path also the fast path.</h2>
+
+          <h4 data-en="Simplifying payee addition" data-pt="Simplificando a adição de destinatário">Simplifying payee addition</h4>
+          <p data-en="I proposed a step-by-step assistant with real-time IBAN validation and clear format examples, camera-based IBAN scanning to remove manual typing, and smart suggestions drawn from past transfers or phone contacts." data-pt="Propus um assistente passo a passo com validação de IBAN em tempo real e exemplos claros de formato, leitura do IBAN pela câmera pra eliminar digitação manual, e sugestões inteligentes vindas de transferências anteriores ou dos contatos do telefone.">I proposed a step-by-step assistant with real-time IBAN validation and clear format examples, camera-based IBAN scanning to remove manual typing, and smart suggestions drawn from past transfers or phone contacts.</p>
+
+          <h4 data-en="Visual feedback and microinteractions" data-pt="Feedback visual e microinterações">Visual feedback and microinteractions</h4>
+          <p data-en="Small moments of confirmation matter more in banking than almost anywhere else: a fade-in of the bank name once an IBAN validates, a checkmark on a correctly filled field, and error messages that explain what went wrong and how to fix it, instead of a generic 'invalid input'." data-pt="Pequenos momentos de confirmação importam mais em banking do que em quase qualquer outro contexto: um fade-in do nome do banco quando o IBAN valida, um check num campo corretamente preenchido, e mensagens de erro que explicam o que deu errado e como corrigir, em vez de um genérico 'entrada inválida'.">Small moments of confirmation matter more in banking than almost anywhere else: a fade-in of the bank name once an IBAN validates, a checkmark on a correctly filled field, and error messages that explain what went wrong and how to fix it, instead of a generic 'invalid input'.</p>
+
+          <h4 data-en="Contacts and instant payments" data-pt="Contatos e pagamentos instantâneos">Contacts and instant payments</h4>
+          <p data-en="I proposed letting members link a phone number to their account and pay contacts directly, backed by SEPA Instant for near real-time settlement. Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but in 2024 it was still missing from AIB's core flow while challenger banks in the same market already offered it." data-pt="Propus permitir que o correntista vinculasse um número de telefone à conta e pagasse contatos diretamente, com SEPA Instant garantindo liquidação quase em tempo real. Pagar um contato do telefone instantaneamente não é uma ideia nova no mundo, é o mesmo padrão por trás do Pix no Brasil, mas em 2024 ainda faltava no fluxo principal do AIB, enquanto bancos desafiantes no mesmo mercado já ofereciam isso.">I proposed letting members link a phone number to their account and pay contacts directly, backed by SEPA Instant for near real-time settlement. Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but in 2024 it was still missing from AIB's core flow while challenger banks in the same market already offered it.</p>
+
+          <h4 data-en="A self-service path to a higher limit" data-pt="Um caminho self-service pra um limite maior">A self-service path to a higher limit</h4>
+          <p data-en="Rather than treating €10,000 as a hard wall, I proposed a self-service option to request a temporary increase, with additional authentication and plain-language explanations of what changes and what the added risk actually is." data-pt="Em vez de tratar os €10.000 como um muro fixo, propus uma opção self-service pra solicitar um aumento temporário, com autenticação adicional e explicações em linguagem simples sobre o que muda e qual é o risco adicional de fato.">Rather than treating €10,000 as a hard wall, I proposed a self-service option to request a temporary increase, with additional authentication and plain-language explanations of what changes and what the added risk actually is.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="benchmark" data-ruler-en="Benchmarking" data-ruler-pt="Benchmarking" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Competitive benchmarking" data-pt="Benchmarking competitivo">Competitive benchmarking</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Reading the market before redesigning a single screen." data-pt="Lendo o mercado antes de redesenhar uma única tela.">Reading the market before redesigning a single screen.</h2>
+          <p data-en="Before proposing anything, I ran a structured benchmark of the digital banks that had already reset expectations in this space, not to copy them, but to understand which patterns had already become the baseline a traditional bank would be silently compared against." data-pt="Antes de propor qualquer coisa, fiz um benchmark estruturado dos bancos digitais que já tinham redefinido as expectativas nesse espaço, não pra copiar, mas pra entender quais padrões já tinham se tornado o mínimo esperado, mesmo que ninguém dissesse isso em voz alta.">Before proposing anything, I ran a structured benchmark of the digital banks that had already reset expectations in this space, not to copy them, but to understand which patterns had already become the baseline a traditional bank would be silently compared against.</p>
+
+          <div class="case-figure">
+            <img src="../assets/img/aib-bench-cards.jpg" alt="Cards from Revolut, N26 and other digital banks used as benchmarking references">
+            <figcaption data-en="Reference set used for the benchmark" data-pt="Conjunto de referência usado no benchmark">Reference set used for the benchmark</figcaption>
+          </div>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="n">01</span>
+              <div><strong>Revolut</strong><p data-en="Simple, intuitive payee addition, real-time IBAN and payee validation, instant payments to phone contacts. Applied to AIB as the model for real-time validation and instant payments." data-pt="Adição de destinatário simples e intuitiva, validação de IBAN e destinatário em tempo real, pagamento instantâneo por contato do telefone. Aplicado ao AIB como modelo pra validação em tempo real e pagamentos instantâneos.">Simple, intuitive payee addition, real-time IBAN and payee validation, instant payments to phone contacts. Applied to AIB as the model for real-time validation and instant payments.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">02</span>
+              <div><strong>N26</strong><p data-en="Flexible payment limits with a temporary increase option, and clear visual feedback throughout the transfer. Applied to AIB as the model for the limit increase flow and step-by-step feedback." data-pt="Limites de pagamento flexíveis com opção de aumento temporário, e feedback visual claro ao longo da transferência. Aplicado ao AIB como modelo pro fluxo de aumento de limite e feedback passo a passo.">Flexible payment limits with a temporary increase option, and clear visual feedback throughout the transfer. Applied to AIB as the model for the limit increase flow and step-by-step feedback.</p></div>
+            </div>
+            <div class="process-step">
+              <span class="n">03</span>
+              <div><strong>Monzo</strong><p data-en="A guided, step-by-step assistant for adding payees, with contact integration and instant payment services built in. Applied to AIB as the model for the payee assistant and contacts integration." data-pt="Um assistente guiado, passo a passo, pra adicionar destinatários, com integração de contatos e serviços de pagamento instantâneo nativos. Aplicado ao AIB como modelo pro assistente de destinatário e integração de contatos.">A guided, step-by-step assistant for adding payees, with contact integration and instant payment services built in. Applied to AIB as the model for the payee assistant and contacts integration.</p></div>
+            </div>
+          </div>
+
+          <p data-en="Zooming out past Europe for a moment, Brazil's Pix was a useful reference point too: a phone number or a simple key resolving instantly to a real transfer, no IBAN required. It is a different regulatory context, but the underlying UX lesson travels well, resolving an identity to a payee should feel closer to sending a text than filling out a form." data-pt="Olhando um pouco além da Europa, o Pix no Brasil também foi uma referência útil: um número de telefone ou uma chave simples resolvendo instantaneamente numa transferência real, sem precisar de IBAN. É um contexto regulatório diferente, mas a lição de UX por baixo se aplica bem, resolver uma identidade até um destinatário deveria parecer mais com mandar uma mensagem do que preencher um formulário.">Zooming out past Europe for a moment, Brazil's Pix was a useful reference point too: a phone number or a simple key resolving instantly to a real transfer, no IBAN required. It is a different regulatory context, but the underlying UX lesson travels well, resolving an identity to a payee should feel closer to sending a text than filling out a form.</p>
+
+          <div class="case-compare" style="max-width:480px;">
+            <figure>
+              <img src="../assets/img/aib-pix-1.jpg" alt="Brazilian Pix transfer amount screen, used as a light reference point">
+              <figcaption data-en="Pix · amount" data-pt="Pix · valor">Pix · amount</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/aib-pix-2.jpg" alt="Brazilian Pix contact selection screen, used as a light reference point">
+              <figcaption data-en="Pix · contact" data-pt="Pix · contato">Pix · contact</figcaption>
+            </figure>
+          </div>
+
+          <div class="case-figure" style="max-width:420px;">
+            <img src="../assets/img/aib-revolut-example.jpg" alt="Revolut send money screen used as a reference">
+            <figcaption data-en="Revolut's send flow: amount, account and note in one clean step" data-pt="O fluxo de envio do Revolut: valor, conta e nota em uma única etapa limpa">Revolut's send flow: amount, account and note in one clean step</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section">
+      <div class="container">
+        <p class="eyebrow" data-en="Success criteria and impact" data-pt="Critérios de sucesso e impacto">Success criteria and impact</p>
+        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="Defining 'better' before building it." data-pt="Definindo 'melhor' antes de construir.">Defining 'better' before building it.</h2>
+        <p data-en="Part of proposing a redesign to a regulated bank is being explicit about how success would be measured, not just what would change on screen." data-pt="Parte de propor um redesign pra um banco regulado é ser explícito sobre como o sucesso seria medido, não só sobre o que mudaria na tela.">Part of proposing a redesign to a regulated bank is being explicit about how success would be measured, not just what would change on screen.</p>
+        <ul class="case-results">
+          <li data-en="Transfer completion rate: fewer people abandoning mid-flow" data-pt="Taxa de conclusão da transferência: menos gente abandonando no meio do fluxo">Transfer completion rate: fewer people abandoning mid-flow</li>
+          <li data-en="Average transfer time: less time from intent to confirmation" data-pt="Tempo médio de transferência: menos tempo entre a intenção e a confirmação">Average transfer time: less time from intent to confirmation</li>
+          <li data-en="Support cost: fewer errors from invalid IBANs and unclear limits" data-pt="Custo de suporte: menos erros por IBAN inválido e limites pouco claros">Support cost: fewer errors from invalid IBANs and unclear limits</li>
+          <li data-en="User satisfaction: tracked through direct feedback and surveys" data-pt="Satisfação do usuário: acompanhada por feedback direto e pesquisas">User satisfaction: tracked through direct feedback and surveys</li>
+        </ul>
+        <p data-en="Beyond this specific flow, my broader work at AIB during this period included well-defined prototyping processes that reduced development time, a 15% increase in engagement measured through user research and A/B testing, and WCAG 2.1 accessibility improvements that made the app usable for more people, not just faster for the average one." data-pt="Além desse fluxo específico, meu trabalho mais amplo no AIB nesse período incluiu processos de prototipação bem definidos que reduziram o tempo de desenvolvimento, um aumento de 15% em engajamento medido por pesquisa de usuários e testes A/B, e melhorias de acessibilidade WCAG 2.1 que tornaram o app usável pra mais gente, não só mais rápido pra pessoa média.">Beyond this specific flow, my broader work at AIB during this period included well-defined prototyping processes that reduced development time, a 15% increase in engagement measured through user research and A/B testing, and WCAG 2.1 accessibility improvements that made the app usable for more people, not just faster for the average one.</p>
+        <p data-en="What this project reinforced is that in banking, speed and safety are not opposites to trade off, they are the same design problem seen from two angles. The fastest flow is the one where the person never has to wonder if it worked." data-pt="O que esse projeto reforçou é que, em banking, velocidade e segurança não são opostos pra balancear, são o mesmo problema de design visto de dois ângulos. O fluxo mais rápido é aquele em que a pessoa nunca precisa se perguntar se funcionou.">What this project reinforced is that in banking, speed and safety are not opposites to trade off, they are the same design problem seen from two angles. The fastest flow is the one where the person never has to wonder if it worked.</p>
+        <p class="case-note" data-en="<strong>Note:</strong> this case reflects a UX audit and redesign proposal developed during my time at AIB Bank. Some details were adapted to preserve confidential information." data-pt="<strong>Nota:</strong> este case reflete uma auditoria de UX e uma proposta de redesign desenvolvida durante minha passagem pelo AIB Bank. Alguns detalhes foram adaptados para preservar informações confidenciais."><strong>Note:</strong> this case reflects a UX audit and redesign proposal developed during my time at AIB Bank. Some details were adapted to preserve confidential information.</p>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="container">
+        <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
+        <p data-en="There is also a banking case with Banco do Brasil and a healthcare app redesign for Unimed in the portfolio." data-pt="Tem também um case bancário com o Banco do Brasil e um redesign de app de saúde da Unimed no portfólio.">There is also a banking case with Banco do Brasil and a healthcare app redesign for Unimed in the portfolio.</p>
+        <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year></span> Lucas Braga</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mateuscruzb/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:lucasmateuspessoal@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
