@@ -114,6 +114,13 @@
 
           <div class="case-gallery">
             <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/aib-payee-details.jpg" alt="AIB Bank payee details form with a static IBAN example and no real-time validation"></div>
+              <figcaption data-en="Adding a payee: a static example, no real-time check" data-pt="Adicionar destinatário: um exemplo estático, sem verificação em tempo real">Adding a payee: a static example, no real-time check</figcaption>
+            </div>
+          </div>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
               <div class="phone-frame"><img src="../assets/img/aib-payment-limit.jpg" alt="AIB Bank daily payment limit screen"></div>
               <figcaption data-en="The €10,000 daily limit, with no path to increase it in context" data-pt="O limite diário de €10.000, sem caminho pra aumentar dentro do próprio contexto">The €10,000 daily limit, with no path to increase it in context</figcaption>
             </div>
@@ -135,7 +142,16 @@
           <p data-en="Small moments of confirmation matter more in banking than almost anywhere else: a fade-in of the bank name once an IBAN validates, a checkmark on a correctly filled field, and error messages that explain what went wrong and how to fix it, instead of a generic 'invalid input'." data-pt="Pequenos momentos de confirmação importam mais em banking do que em quase qualquer outro contexto: um fade-in do nome do banco quando o IBAN valida, um check num campo corretamente preenchido, e mensagens de erro que explicam o que deu errado e como corrigir, em vez de um genérico 'entrada inválida'.">Small moments of confirmation matter more in banking than almost anywhere else: a fade-in of the bank name once an IBAN validates, a checkmark on a correctly filled field, and error messages that explain what went wrong and how to fix it, instead of a generic 'invalid input'.</p>
 
           <h4 data-en="Contacts and instant payments" data-pt="Contatos e pagamentos instantâneos">Contacts and instant payments</h4>
-          <p data-en="I proposed letting members link a phone number to their account and pay contacts directly, backed by SEPA Instant for near real-time settlement. Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but in 2024 it was still missing from AIB's core flow while challenger banks in the same market already offered it." data-pt="Propus permitir que o correntista vinculasse um número de telefone à conta e pagasse contatos diretamente, com SEPA Instant garantindo liquidação quase em tempo real. Pagar um contato do telefone instantaneamente não é uma ideia nova no mundo, é o mesmo padrão por trás do Pix no Brasil, mas em 2024 ainda faltava no fluxo principal do AIB, enquanto bancos desafiantes no mesmo mercado já ofereciam isso.">I proposed letting members link a phone number to their account and pay contacts directly, backed by SEPA Instant for near real-time settlement. Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but in 2024 it was still missing from AIB's core flow while challenger banks in the same market already offered it.</p>
+          <p data-en="AIB actually already had the building blocks for this: a 'Pay a Contact' option existed, but it lived behind an extra opt-in setup step, tucked in a separate tab, disconnected from the main flow most people used. I proposed making contact-based payment the default path for new payees instead of an easter egg, backed by SEPA Instant for near real-time settlement." data-pt="O AIB, na verdade, já tinha os blocos básicos pra isso: existia uma opção de 'Pagar um contato', mas ela vivia atrás de uma etapa extra de configuração opcional, escondida numa aba separada, desconectada do fluxo principal que a maioria das pessoas usava. Propus tornar o pagamento por contato o caminho padrão para novos destinatários, em vez de um easter egg, com o SEPA Instant garantindo liquidação quase em tempo real.">AIB actually already had the building blocks for this: a 'Pay a Contact' option existed, but it lived behind an extra opt-in setup step, tucked in a separate tab, disconnected from the main flow most people used. I proposed making contact-based payment the default path for new payees instead of an easter egg, backed by SEPA Instant for near real-time settlement.</p>
+
+          <div class="case-gallery">
+            <div class="phone-frame-wrap">
+              <div class="phone-frame"><img src="../assets/img/aib-pay-contact-setup.jpg" alt="AIB Bank's existing but disconnected Pay a Contact setup screen"></div>
+              <figcaption data-en="The existing pattern, buried a tab away from the main flow" data-pt="O padrão que já existia, escondido uma aba distante do fluxo principal">The existing pattern, buried a tab away from the main flow</figcaption>
+            </div>
+          </div>
+
+          <p data-en="Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but even where AIB had already started building it, it had not yet earned a place in the primary journey." data-pt="Pagar um contato do telefone instantaneamente não é uma ideia nova no mundo, é o mesmo padrão por trás do Pix no Brasil, mas mesmo onde o AIB já tinha começado a construir isso, ainda não tinha ganhado espaço na jornada principal.">Paying a phone contact instantly is not a new idea globally, it is the same underlying pattern behind Brazil's Pix, but even where AIB had already started building it, it had not yet earned a place in the primary journey.</p>
 
           <h4 data-en="A self-service path to a higher limit" data-pt="Um caminho self-service pra um limite maior">A self-service path to a higher limit</h4>
           <p data-en="Rather than treating €10,000 as a hard wall, I proposed a self-service option to request a temporary increase, with additional authentication and plain-language explanations of what changes and what the added risk actually is." data-pt="Em vez de tratar os €10.000 como um muro fixo, propus uma opção self-service pra solicitar um aumento temporário, com autenticação adicional e explicações em linguagem simples sobre o que muda e qual é o risco adicional de fato.">Rather than treating €10,000 as a hard wall, I proposed a self-service option to request a temporary increase, with additional authentication and plain-language explanations of what changes and what the added risk actually is.</p>
@@ -150,7 +166,7 @@
           <h2 data-en="Reading the market before redesigning a single screen." data-pt="Lendo o mercado antes de redesenhar uma única tela.">Reading the market before redesigning a single screen.</h2>
           <p data-en="Before proposing anything, I ran a structured benchmark of the digital banks that had already reset expectations in this space, not to copy them, but to understand which patterns had already become the baseline a traditional bank would be silently compared against." data-pt="Antes de propor qualquer coisa, fiz um benchmark estruturado dos bancos digitais que já tinham redefinido as expectativas nesse espaço, não pra copiar, mas pra entender quais padrões já tinham se tornado o mínimo esperado, mesmo que ninguém dissesse isso em voz alta.">Before proposing anything, I ran a structured benchmark of the digital banks that had already reset expectations in this space, not to copy them, but to understand which patterns had already become the baseline a traditional bank would be silently compared against.</p>
 
-          <div class="case-figure">
+          <div class="case-figure" style="max-width:340px;">
             <img src="../assets/img/aib-bench-cards.jpg" alt="Cards from Revolut, N26 and other digital banks used as benchmarking references">
             <figcaption data-en="Reference set used for the benchmark" data-pt="Conjunto de referência usado no benchmark">Reference set used for the benchmark</figcaption>
           </div>
