@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/styles.css">
   <style>
@@ -17,6 +17,11 @@
     .board { transform-origin: top left; }
     @media (min-width: 1480px) { .board-wrap { border-radius: 20px; } }
     .board-group-label { width: 100%; max-width: 1440px; padding: 0 4px; }
+
+    /* Keep the global portfolio navigation visually identical to index.html.
+       Board typography is scoped inside .board and must not leak into the header. */
+    .nav, .nav * { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .nav-links a, .lang-toggle, .lang-btn { font-family: 'Space Mono', monospace; }
   </style>
 </head>
 <body>
