@@ -25,6 +25,20 @@
 
     .motion-card{background:#fff;border:1px solid #E6E2DE;border-radius:22px;padding:30px;min-height:320px;display:flex;flex-direction:column;justify-content:center;gap:18px}.motion-card h3{font-family:'Space Grotesk',system-ui,sans-serif;font-size:22px;margin:0}.motion-card p{font-size:16px;line-height:1.55;color:#5C5C5C;margin:0}.motion-progress{display:flex;gap:6px}.motion-progress span{height:7px;flex:1;border-radius:99px;background:#E0E0E0}.motion-progress span:nth-child(-n+3){background:#2E3192;animation:bbPulse 2.4s ease-in-out infinite}.motion-button{border:0;border-radius:9px;background:#2E3192;color:#fff;padding:16px;font-weight:700;font-size:16px;animation:bbPress 2.8s ease-in-out infinite}.motion-success{width:72px;height:72px;border-radius:999px;background:#EEF9F1;display:grid;place-items:center;font-size:32px;animation:bbSuccess 2.8s ease-in-out infinite}@keyframes bbPulse{0%,100%{opacity:1}50%{opacity:.55}}@keyframes bbPress{0%,70%,100%{transform:scale(1)}78%{transform:scale(.97)}86%{transform:scale(1)}}@keyframes bbSuccess{0%,55%{transform:scale(.8);opacity:.35}70%,100%{transform:scale(1);opacity:1}}@media(prefers-reduced-motion:reduce){.motion-progress span,.motion-button,.motion-success{animation:none!important}}
   </style>
+
+<style>
+/* Hero prototype treatment: flat, consistent with the rest of the case */
+.board-strip > .board-wrap:first-child img {
+  box-shadow: none !important;
+  filter: none !important;
+}
+.board-strip > .board-wrap:first-child [style*="box-shadow"],
+.board-strip > .board-wrap:first-child [style*="filter"] {
+  box-shadow: none !important;
+  filter: none !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -817,5 +831,51 @@
     });
   </script>
   <script src="../js/script.js"></script>
+
+<script>
+(function () {
+  var VERTICAL_SPACE = 88;
+
+  function normalizeBoardVerticalSpace() {
+    document.querySelectorAll('.board').forEach(function(board) {
+      var inner = board.firstElementChild;
+      if (!inner) return;
+
+      var nativeHeight = parseFloat(inner.style.height || board.style.height);
+      if (!nativeHeight) return;
+
+      var innerRect = inner.getBoundingClientRect();
+      var scale = innerRect.width / 1440 || 1;
+      var maxBottom = 0;
+
+      Array.from(inner.children).forEach(function(child) {
+        var cs = getComputedStyle(child);
+        if (cs.display === 'none') return;
+        var r = child.getBoundingClientRect();
+        var bottom = (r.bottom - innerRect.top) / scale;
+        if (bottom > maxBottom) maxBottom = bottom;
+      });
+
+      var targetHeight = Math.ceil(maxBottom + VERTICAL_SPACE);
+
+      // Only remove excessive empty canvas. Never compress content or enlarge boards.
+      if (targetHeight > 0 && targetHeight < nativeHeight - 8) {
+        inner.style.height = targetHeight + 'px';
+        board.style.height = targetHeight + 'px';
+      }
+    });
+
+    if (typeof fitBoards === 'function') fitBoards();
+  }
+
+  window.addEventListener('load', function() {
+    requestAnimationFrame(function() {
+      normalizeBoardVerticalSpace();
+      requestAnimationFrame(normalizeBoardVerticalSpace);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
