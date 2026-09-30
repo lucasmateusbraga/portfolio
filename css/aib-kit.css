@@ -1,0 +1,100 @@
+/* =========================================================
+   AIB Pay & Transfer - UI kit used on the case page.
+   Rebuilt from the delivered screens so components and their
+   variants can be shown live (sharp, bilingual) instead of as
+   cropped screenshots. Everything is scoped under .aibk.
+   ========================================================= */
+@font-face{ font-family:"Inter AIB"; src:url("../assets/fonts/inter-latin-400-normal.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face{ font-family:"Inter AIB"; src:url("../assets/fonts/inter-latin-500-normal.woff2") format("woff2"); font-weight:500; font-display:swap; }
+@font-face{ font-family:"Inter AIB"; src:url("../assets/fonts/inter-latin-600-normal.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face{ font-family:"Inter AIB"; src:url("../assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight:700; font-display:swap; }
+
+.aibk{
+  --k-bg:#1b1a1d; --k-surface:#2a2a2c; --k-line:rgba(255,255,255,.09);
+  --k-ink:#f4f4f5; --k-mute:#a3a3a8; --k-label:#bdbdc1;
+  --k-teal:#349a78; --k-teal-ink:#3fae86; --k-teal-soft:#223b33;
+  --k-red:#e0487d; --k-red-soft:#3a2230; --k-amber:#e0a24a; --k-amber-soft:#3a3020;
+  --k-disabled:#3a3a3c; --k-disabled-ink:#8a8a8e;
+  font-family:"Inter AIB", Inter, system-ui, -apple-system, sans-serif;
+  color:var(--k-ink);
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:-.005em;
+}
+.aibk *{ box-sizing:border-box; }
+.aibk svg{ display:block; flex:none; }
+
+/* field */
+.aibk .k-label{ font-size:13px; font-weight:600; color:var(--k-label); margin:0 0 7px; }
+.aibk .k-field{
+  display:flex; align-items:center; gap:10px;
+  height:50px; padding:0 14px;
+  background:var(--k-surface); border:1.5px solid transparent; border-radius:12px;
+  font-size:16px; color:var(--k-ink);
+}
+.aibk .k-field .k-value{ flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.aibk .k-field .k-ph{ color:#6f6f74; }
+.aibk .k-field.is-focus{ border-color:rgba(255,255,255,.5); }
+.aibk .k-field.is-valid{ border-color:var(--k-teal); }
+.aibk .k-field.is-invalid{ border-color:var(--k-red); }
+.aibk .k-caret{ display:inline-block; width:1.5px; height:19px; background:var(--k-teal-ink); vertical-align:middle; margin-left:1px; }
+.aibk .k-help{ display:flex; gap:6px; align-items:flex-start; margin-top:7px; font-size:13px; font-weight:600; line-height:1.35; color:var(--k-mute); }
+.aibk .k-help.is-valid{ color:var(--k-teal-ink); }
+.aibk .k-help.is-invalid{ color:var(--k-red); }
+
+/* spinner */
+.aibk .k-spin{ width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,.18); border-top-color:var(--k-teal-ink); flex:none; }
+.aibk .k-spin.is-light{ border-color:rgba(255,255,255,.25); border-top-color:#fff; }
+@keyframes k-spin{ to{ transform:rotate(360deg); } }
+.aibk .k-spin.is-live{ animation:k-spin .9s linear infinite; }
+@media (prefers-reduced-motion: reduce){ .aibk .k-spin.is-live{ animation:none; } }
+
+/* buttons */
+.aibk .k-btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  height:50px; width:100%; border-radius:12px;
+  font-size:16px; font-weight:600; border:0;
+  background:var(--k-teal); color:#fff;
+}
+.aibk .k-btn.is-disabled{ background:var(--k-disabled); color:var(--k-disabled-ink); }
+.aibk .k-btn.is-loading{ background:#2a6f58; color:rgba(255,255,255,.88); }
+.aibk .k-btn.is-secondary{ background:transparent; border:1.5px solid rgba(255,255,255,.16); color:var(--k-ink); }
+.aibk .k-btn.is-text{ background:transparent; color:var(--k-mute); font-weight:500; font-size:15px; height:40px; }
+
+/* feedback card */
+.aibk .k-note{
+  display:flex; gap:12px; align-items:flex-start;
+  padding:14px; border-radius:16px;
+  background:var(--k-surface); border:1px solid var(--k-line);
+  font-size:14px; line-height:1.42; color:var(--k-mute);
+}
+.aibk .k-note strong{ display:block; color:var(--k-ink); font-weight:600; font-size:15px; margin-bottom:2px; }
+.aibk .k-note .k-ico{ width:34px; height:34px; border-radius:10px; display:grid; place-items:center; background:rgba(255,255,255,.06); color:var(--k-mute); flex:none; }
+.aibk .k-note.is-success .k-ico{ background:var(--k-teal-soft); color:var(--k-teal-ink); }
+.aibk .k-note.is-info .k-ico{ color:var(--k-teal-ink); }
+.aibk .k-note.is-warning{ background:var(--k-amber-soft); border-color:rgba(224,162,74,.25); }
+.aibk .k-note.is-warning .k-ico{ background:rgba(224,162,74,.16); color:var(--k-amber); }
+.aibk .k-note.is-error{ background:var(--k-red-soft); border-color:rgba(224,72,125,.28); }
+.aibk .k-note.is-error .k-ico{ background:rgba(224,72,125,.16); color:var(--k-red); }
+
+/* SEPA Instant row */
+.aibk .k-row{
+  display:flex; gap:12px; align-items:flex-start;
+  padding:14px 16px; border-radius:16px; background:var(--k-surface); border:1px solid var(--k-line);
+  font-size:14px; line-height:1.42; color:var(--k-mute);
+}
+.aibk .k-row .k-row-main{ flex:1; }
+.aibk .k-row strong{ display:block; color:var(--k-ink); font-size:15px; font-weight:600; margin-bottom:3px; }
+.aibk .k-row .k-bolt{ color:var(--k-teal-ink); margin-top:1px; }
+.aibk .k-row.is-off .k-bolt{ color:var(--k-disabled-ink); }
+.aibk .k-tag{ font-size:12px; font-weight:700; letter-spacing:.02em; color:var(--k-teal-ink); padding-top:2px; }
+.aibk .k-tag.is-off{ color:var(--k-disabled-ink); }
+
+/* daily limit meter */
+.aibk .k-meter{ padding:14px 16px; border-radius:16px; background:var(--k-surface); border:1px solid var(--k-line); }
+.aibk .k-meter-top{ display:flex; justify-content:space-between; font-size:12px; color:var(--k-mute); margin-bottom:6px; }
+.aibk .k-meter-val{ font-size:22px; font-weight:700; letter-spacing:-.02em; }
+.aibk .k-meter-val small{ font-size:13px; font-weight:500; color:var(--k-mute); margin-left:4px; letter-spacing:0; }
+.aibk .k-bar{ height:6px; border-radius:6px; background:rgba(255,255,255,.1); margin-top:10px; overflow:hidden; }
+.aibk .k-bar i{ display:block; height:100%; border-radius:6px; background:var(--k-teal); }
+.aibk .k-bar.is-warning i{ background:var(--k-amber); }
+.aibk .k-bar.is-error i{ background:var(--k-red); }
