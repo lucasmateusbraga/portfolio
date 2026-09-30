@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leapfone: institutional redesign · Lucas Braga</title>
-  <meta name="description" content="Case study: redesigning Leapfone's B2B website to communicate maturity and credibility to investors.">
+  <title>Leapfone Empresas: B2B website redesign · Lucas Braga</title>
+  <meta name="description" content="Case study: redesigning the Leapfone website for companies, from research and messaging to desktop and mobile UI.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/case-leapfone.css">
 </head>
 <body>
 
@@ -42,117 +43,271 @@
     </div>
   </nav>
 
-  <main>
-    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero">
+    <main>
+    <!-- ============ HERO ============ -->
+    <section id="overview" data-ruler-en="Overview" data-ruler-pt="Visão geral" class="project-hero lf-hero">
       <div class="container">
         <a class="back-link" href="../index.html#projetos">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           <span data-en="All projects" data-pt="Todos os projetos">All projects</span>
         </a>
-        <p class="eyebrow" data-en="Project 05 · Corporate website" data-pt="Projeto 05 · Website institucional">Project 05 · Corporate website</p>
-        <h1 data-en="Leapfone: institutional redesign" data-pt="Leapfone: Redesign institucional">Leapfone: institutional redesign</h1>
-        <p class="lead" data-en="Redesigning Leapfone's B2B/B2C website to communicate the company's maturity and capacity to scale, right as it prepared to raise a funding round." data-pt="Redesign do site B2B/B2C da Leapfone para comunicar a maturidade e a capacidade de escala da empresa, justamente no momento em que ela se preparava para uma rodada de investimento.">Redesigning Leapfone's B2B/B2C website to communicate the company's maturity and capacity to scale, right as it prepared to raise a funding round.</p>
+        <p class="eyebrow" data-en="Project 05 · B2B website" data-pt="Projeto 05 · Site B2B">Project 05 · B2B website</p>
+        <h1 data-en="Redesigning the Leapfone website for companies." data-pt="Redesenhando o site da Leapfone para empresas.">Redesigning the Leapfone website for companies.</h1>
+        <p class="lead" data-en="Leapfone rents smartphones to companies, with protection, replacement and a management portal included. I redesigned the B2B website so an IT or purchasing manager could understand the offer, compare it with buying and ask for a proposal." data-pt="A Leapfone aluga smartphones para empresas, com proteção, reposição e um portal de gestão inclusos. Redesenhei o site B2B para que um gestor de TI ou de compras conseguisse entender a oferta, comparar com a compra e pedir uma proposta.">Leapfone rents smartphones to companies, with protection, replacement and a management portal included. I redesigned the B2B website so an IT or purchasing manager could understand the offer, compare it with buying and ask for a proposal.</p>
         <div class="project-meta">
+          <div><span data-en="Role" data-pt="Papel">Role</span><strong data-en="Product Designer, end to end" data-pt="Product Designer, de ponta a ponta">Product Designer, end to end</strong></div>
+          <div><span data-en="Team" data-pt="Time">Team</span><strong data-en="Marketing, Growth, Sales" data-pt="Marketing, Growth, Vendas">Marketing, Growth, Sales</strong></div>
+          <div><span data-en="Scope" data-pt="Escopo">Scope</span><strong data-en="Research, UX writing, UI, SEO" data-pt="Pesquisa, UX writing, UI, SEO">Research, UX writing, UI, SEO</strong></div>
+          <div><span data-en="Platform" data-pt="Plataforma">Platform</span><strong data-en="Desktop and mobile web" data-pt="Web desktop e mobile">Desktop and mobile web</strong></div>
+        </div>
+      </div>
+
+      <div class="lf-stage lf-stage--dark">
+        <div class="lf-stage-inner">
+          <div class="lf-browser lf-browser--dark reveal">
+            <div class="lf-browser-bar"><i></i><i></i><i></i><span>leapfone.com.br/empresas</span></div>
+            <video class="lf-video" poster="../assets/img/leapfone/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Leapfone Empresas hero: the headline word changes between ease, technology and savings while the phones show the lock screen and the home screen"><source src="../assets/video/leapfone-hero.webm" type="video/webm"><source src="../assets/video/leapfone-hero.mp4" type="video/mp4"></video>
+          </div>
+          <p class="lf-caption" data-en="The headline rotates between the three reasons companies gave for renting instead of buying: ease, technology and savings." data-pt="O título alterna entre os três motivos que as empresas davam para alugar em vez de comprar: facilidade, tecnologia e economia.">The headline rotates between the three reasons companies gave for renting instead of buying: ease, technology and savings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHALLENGE / SOLUTION / ROLE ============ -->
+    <section id="desafio" data-ruler-en="Challenge" data-ruler-pt="Desafio" class="case-section">
+      <div class="container">
+        <div class="lf-csr reveal">
           <div>
-            <span data-en="Role" data-pt="Papel">Role</span>
-            <strong data-en="Product Designer, end to end" data-pt="Product Designer, ponta a ponta">Product Designer, end to end</strong>
+            <p class="lf-label" data-en="The challenge" data-pt="O desafio">The challenge</p>
+            <p data-en="The old website spoke to people renting a phone for themselves. A company looking for corporate phones, or an investor looking at the business, could not find itself in it." data-pt="O site antigo falava com pessoas alugando um celular para uso próprio. Uma empresa procurando celulares corporativos, ou um investidor olhando o negócio, não se encontrava nele.">The old website spoke to people renting a phone for themselves. A company looking for corporate phones, or an investor looking at the business, could not find itself in it.</p>
           </div>
           <div>
-            <span data-en="Collaboration" data-pt="Colaboração">Collaboration</span>
-            <strong data-en="Marketing, Growth" data-pt="Marketing, Growth">Marketing, Growth</strong>
+            <p class="lf-label" data-en="The solution" data-pt="A solução">The solution</p>
+            <p data-en="A separate website for companies, organized around the arguments the sales team already used in meetings: cash flow, fleet management, protection and a complete kit." data-pt="Um site separado para empresas, organizado a partir dos argumentos que o time de vendas já usava nas reuniões: fluxo de caixa, gestão da frota, proteção e kit completo.">A separate website for companies, organized around the arguments the sales team already used in meetings: cash flow, fleet management, protection and a complete kit.</p>
           </div>
           <div>
-            <span data-en="Scope" data-pt="Escopo">Scope</span>
-            <strong data-en="Research, UX writing, SEO" data-pt="Pesquisa, UX writing, SEO">Research, UX writing, SEO</strong>
-          </div>
-          <div>
-            <span data-en="Platform" data-pt="Plataforma">Platform</span>
-            <strong data-en="Website" data-pt="Website">Website</strong>
+            <p class="lf-label" data-en="My role" data-pt="Meu papel">My role</p>
+            <p data-en="Research with data and sales, information architecture, copy, UI for desktop and mobile, and the handoff to development." data-pt="Pesquisa com dados e com vendas, arquitetura de informação, texto, UI para desktop e mobile, e a entrega para o desenvolvimento.">Research with data and sales, information architecture, copy, UI for desktop and mobile, and the handoff to development.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contexto" data-ruler-en="Context" data-ruler-pt="Contexto" class="case-section">
+    <!-- ============ BEFORE / AFTER ============ -->
+    <section id="antes-depois" data-ruler-en="Before and after" data-ruler-pt="Antes e depois" class="case-section dim">
       <div class="container case-layout">
-        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Context" data-pt="Contexto">Context</p></div></div>
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Before and after" data-pt="Antes e depois">Before and after</p></div></div>
         <div class="case-body">
-          <h2 data-en="A website that had to grow up fast." data-pt="Um site que precisava crescer rápido.">A website that had to grow up fast.</h2>
-          <p data-en="Leapfone was preparing to open a funding round with investors, and the institutional website suddenly had an essential role in that moment: communicating the product's maturity, its ability to scale, and reinforcing the clarity and credibility of the service." data-pt="A Leapfone estava se preparando para abrir uma rodada com investidores, e o site institucional passou a ter um papel essencial nesse momento: comunicar a maturidade do produto, sua capacidade de escala e reforçar a clareza e credibilidade do serviço.">Leapfone was preparing to open a funding round with investors, and the institutional website suddenly had an essential role in that moment: communicating the product's maturity, its ability to scale, and reinforcing the clarity and credibility of the service.</p>
-          <p data-en="I led a deep research effort into the business itself, mapping how the company communicated with users, its positioning against competitors, and the opportunities to evolve the digital experience." data-pt="Conduzi um trabalho de pesquisa e entendimento profundo do negócio, mapeando a comunicação com os usuários, o posicionamento frente à concorrência e as oportunidades de evolução da experiência digital.">I led a deep research effort into the business itself, mapping how the company communicated with users, its positioning against competitors, and the opportunities to evolve the digital experience.</p>
-          <p data-en="<strong>The problem:</strong> the existing site was written for individual customers renting a phone for themselves, when the actual audience walking into a funding conversation was investors and B2B decision makers evaluating whether this was a serious, scalable business." data-pt="<strong>O problema:</strong> o site existente era escrito para clientes individuais alugando um celular pra uso próprio, quando o público real que entraria numa conversa de investimento eram investidores e tomadores de decisão B2B avaliando se aquele era um negócio sério e escalável."><strong>The problem:</strong> the existing site was written for individual customers renting a phone for themselves, when the actual audience walking into a funding conversation was investors and B2B decision makers evaluating whether this was a serious, scalable business.</p>
-
-          <div class="case-compare">
-            <figure>
-              <img src="../assets/img/leapfone-before.png" alt="Leapfone website before the redesign">
-              <figcaption data-en="Before" data-pt="Antes">Before</figcaption>
-            </figure>
-            <figure>
-              <img src="../assets/img/leapfone-after.png" alt="Leapfone website after the redesign">
-              <figcaption data-en="After" data-pt="Depois">After</figcaption>
-            </figure>
-          </div>
+          <h2 data-en="From a consumer store to a website for companies." data-pt="De uma loja para o consumidor a um site para empresas.">From a consumer store to a website for companies.</h2>
+          <p data-en="Leapfone was preparing a funding round, and the website was one of the first things investors and B2B buyers would see. The existing page sold a monthly phone subscription to individuals, with product cards and a promotion bar. Nothing on it said who the company served or how the service worked for a business." data-pt="A Leapfone se preparava para uma rodada de investimento, e o site era uma das primeiras coisas que investidores e compradores B2B iam ver. A página existente vendia assinatura mensal de celular para pessoas físicas, com cards de produto e uma barra de promoção. Nada nela dizia para quem a empresa trabalhava ou como o serviço funcionava para um negócio.">Leapfone was preparing a funding round, and the website was one of the first things investors and B2B buyers would see. The existing page sold a monthly phone subscription to individuals, with product cards and a promotion bar. Nothing on it said who the company served or how the service worked for a business.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lf-ba reveal">
+          <figure>
+            <div class="lf-browser"><div class="lf-browser-bar"><i></i><i></i><i></i></div><img src="../assets/img/leapfone-before.png" alt="The previous Leapfone website: a consumer subscription page with product cards" loading="lazy"></div>
+            <figcaption data-en="Before: consumer subscription, product first" data-pt="Antes: assinatura para consumidor, produto em primeiro">Before: consumer subscription, product first</figcaption>
+          </figure>
+          <figure>
+            <div class="lf-browser"><div class="lf-browser-bar"><i></i><i></i><i></i></div><img src="../assets/img/leapfone/sec-hero.webp" alt="The new Leapfone Empresas hero with corporate smartphones and a single call to action" loading="lazy"></div>
+            <figcaption data-en="After: a page for companies, one call to action" data-pt="Depois: uma página para empresas, uma chamada para ação">After: a page for companies, one call to action</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section id="funil" data-ruler-en="Funnel" data-ruler-pt="Funil" class="case-section dim">
-      <div class="container case-layout">
-        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Funnel analysis" data-pt="Análise do funil">Funnel analysis</p></div></div>
-        <div class="case-body">
-          <h2 data-en="The funnel was simple. Finding the button was not." data-pt="O funil era simples. O problema era achar o botão.">The funnel was simple. Finding the button was not.</h2>
-          <p data-en="I identified friction points across the funnel: visitor lands, tries to understand the service, and only then requests a proposal. The old site presented content that was hard to scan, with CTAs buried below decorative blocks." data-pt="Identifiquei pontos de fricção no funil: visitante entra, tenta entender o serviço, e só depois solicita uma proposta. O site antigo apresentava conteúdo pouco escaneável, com CTAs escondidos abaixo de blocos decorativos.">I identified friction points across the funnel: visitor lands, tries to understand the service, and only then requests a proposal. The old site presented content that was hard to scan, with CTAs buried below decorative blocks.</p>
-          <p data-en="<strong>Solution:</strong> reposition CTAs above the fold, build a clear path to 'Request a proposal', and organize information progressively: value proposition, benefits, social proof, comparison and action." data-pt="<strong>Solução:</strong> reposicionar os CTAs acima da dobra, criar um caminho claro até 'Solicitar Proposta' e organizar as informações de forma progressiva: proposta de valor, benefícios, prova social, comparativo e ação."><strong>Solution:</strong> reposition CTAs above the fold, build a clear path to 'Request a proposal', and organize information progressively: value proposition, benefits, social proof, comparison and action.</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- ============ DATA ============ -->
     <section id="dados" data-ruler-en="Data" data-ruler-pt="Dados" class="case-section">
       <div class="container case-layout">
-        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="Data and hypotheses" data-pt="Dados e hipóteses">Data and hypotheses</p></div></div>
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Data and sales" data-pt="Dados e vendas">Data and sales</p></div></div>
         <div class="case-body">
-          <h2 data-en="Letting the data point at what actually hurt." data-pt="Deixando os dados apontarem onde de fato doía.">Letting the data point at what actually hurt.</h2>
-          <p data-en="To guide the redesign, I used a data-driven UX approach: traffic in GA4, heatmaps and session recordings in Clarity, and dashboards in Looker Studio tracked in real time with the marketing and growth team." data-pt="Para guiar o redesign, usei uma abordagem de UX data-driven: tráfego no GA4, mapas de calor e sessões no Clarity, e dashboards no Looker Studio acompanhados em tempo real com o time de marketing e growth.">To guide the redesign, I used a data-driven UX approach: traffic in GA4, heatmaps and session recordings in Clarity, and dashboards in Looker Studio tracked in real time with the marketing and growth team.</p>
-          <p data-en="The data showed three clear points to improve: the main CTA was hidden on mobile, the form was too long and caused abandonment, and the content felt generic, without conveying trust. From there, I formulated hypotheses and redesigned with a focus on clarity, credibility and less friction." data-pt="Os dados mostraram três pontos claros de melhoria: o CTA principal estava escondido em mobile, o formulário era longo e causava abandono, e o conteúdo parecia genérico, sem transmitir confiança. A partir disso, formulei hipóteses e redesenhei com foco em clareza, credibilidade e menos fricção.">The data showed three clear points to improve: the main CTA was hidden on mobile, the form was too long and caused abandonment, and the content felt generic, without conveying trust. From there, I formulated hypotheses and redesigned with a focus on clarity, credibility and less friction.</p>
-          <div class="stakeholder-row">
-            <span>GA4</span>
-            <span>Clarity</span>
-            <span>Looker Studio</span>
+          <h2 data-en="Behaviour data showed where people gave up. Sales showed why companies said yes." data-pt="Os dados de comportamento mostraram onde as pessoas desistiam. Vendas mostrou por que as empresas diziam sim.">Behaviour data showed where people gave up. Sales showed why companies said yes.</h2>
+          <p data-en="I looked at traffic in GA4, heatmaps and session recordings in Clarity, and a Looker Studio dashboard I followed with the marketing and growth team. In parallel, I collected the messages the sales team used in cold emails and calls, grouped by the argument behind each one." data-pt="Olhei o tráfego no GA4, os mapas de calor e as gravações de sessão no Clarity, e um dashboard no Looker Studio que acompanhei com o time de marketing e growth. Em paralelo, reuni as mensagens que o time de vendas usava em e-mails de prospecção e ligações, agrupadas pelo argumento por trás de cada uma.">I looked at traffic in GA4, heatmaps and session recordings in Clarity, and a Looker Studio dashboard I followed with the marketing and growth team. In parallel, I collected the messages the sales team used in cold emails and calls, grouped by the argument behind each one.</p>
+          <div class="lf-chips"><span>GA4</span><span>Clarity</span><span>Looker Studio</span><span data-en="Sales messages" data-pt="Mensagens de vendas">Sales messages</span></div>
+          <ol class="lf-findings">
+            <li><strong data-en="The main button disappeared on mobile." data-pt="O botão principal sumia no mobile.">The main button disappeared on mobile.</strong><span data-en="On small screens, the call to action sat below decorative blocks, so many sessions ended before anyone reached it." data-pt="Em telas pequenas, a chamada para ação ficava abaixo de blocos decorativos, e muitas sessões terminavam antes de alguém chegar nela.">On small screens, the call to action sat below decorative blocks, so many sessions ended before anyone reached it.</span></li>
+            <li><strong data-en="The form was long and people left halfway." data-pt="O formulário era longo e as pessoas saíam no meio.">The form was long and people left halfway.</strong><span data-en="Recordings showed people starting the form and abandoning it before the last fields." data-pt="As gravações mostravam pessoas começando o formulário e abandonando antes dos últimos campos.">Recordings showed people starting the form and abandoning it before the last fields.</span></li>
+            <li><strong data-en="The content did not sound like a B2B supplier." data-pt="O conteúdo não soava como um fornecedor B2B.">The content did not sound like a B2B supplier.</strong><span data-en="The page talked about the phone. Companies wanted to hear about cash, taxes, replacement and control of the fleet." data-pt="A página falava do celular. As empresas queriam ouvir sobre caixa, impostos, reposição e controle da frota.">The page talked about the phone. Companies wanted to hear about cash, taxes, replacement and control of the fleet.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EVOLUTION ============ -->
+    <section id="versoes" data-ruler-en="Iterations" data-ruler-pt="Versões" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Iterations" data-pt="Versões">Iterations</p></div></div>
+        <div class="case-body">
+          <h2 data-en="The page went through three rounds before the final version." data-pt="A página passou por três rodadas antes da versão final.">The page went through three rounds before the final version.</h2>
+          <p data-en="Each round was reviewed with marketing and sales. The structure changed less than the argument: every version moved closer to what a company asks before signing." data-pt="Cada rodada foi revisada com marketing e vendas. A estrutura mudou menos do que o argumento: cada versão chegou mais perto do que uma empresa pergunta antes de assinar.">Each round was reviewed with marketing and sales. The structure changed less than the argument: every version moved closer to what a company asks before signing.</p>
+        </div>
+      </div>
+      <div class="container">
+        <ol class="lf-timeline reveal">
+          <li><span class="lf-step">V1</span><strong data-en="Lifestyle photo and a list of benefits" data-pt="Foto lifestyle e uma lista de benefícios">Lifestyle photo and a list of benefits</strong><p data-en="A generic hero, benefit cards, how it works, testimonials and a form. It looked like any SaaS page." data-pt="Hero genérico, cards de benefício, como funciona, depoimentos e formulário. Parecia qualquer página de SaaS.">A generic hero, benefit cards, how it works, testimonials and a form. It looked like any SaaS page.</p></li>
+          <li><span class="lf-step">V2</span><strong data-en="Section variants" data-pt="Variantes de seção">Section variants</strong><p data-en="I explored heroes, carousels and title treatments one section at a time, to test them with the team." data-pt="Explorei heros, carrosséis e tratamentos de título uma seção por vez, para testar com o time.">I explored heroes, carousels and title treatments one section at a time, to test them with the team.</p></li>
+          <li><span class="lf-step">V3</span><strong data-en="Models and a first comparison" data-pt="Modelos e um primeiro comparativo">Models and a first comparison</strong><p data-en="Phone models came in, along with a first version of the rent versus buy comparison." data-pt="Entraram os modelos de celular e uma primeira versão do comparativo entre alugar e comprar.">Phone models came in, along with a first version of the rent versus buy comparison.</p></li>
+          <li class="is-final"><span class="lf-step" data-en="Final" data-pt="Final">Final</span><strong data-en="One argument per section" data-pt="Um argumento por seção">One argument per section</strong><p data-en="A product hero, four sections built on the sales arguments, client logos, a full comparison table, a shorter form and a grouped FAQ." data-pt="Hero de produto, quatro seções construídas sobre os argumentos de vendas, logos de clientes, tabela comparativa completa, formulário mais curto e FAQ agrupado.">A product hero, four sections built on the sales arguments, client logos, a full comparison table, a shorter form and a grouped FAQ.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ARGUMENTS ============ -->
+    <section id="argumentos" data-ruler-en="Arguments" data-ruler-pt="Argumentos" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Messaging" data-pt="Mensagem">Messaging</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Each section answers one question a buyer brings to the meeting." data-pt="Cada seção responde uma pergunta que o comprador leva para a reunião.">Each section answers one question a buyer brings to the meeting.</h2>
+          <p data-en="The sales team had dozens of messages. I grouped them into four arguments and gave each one a section with the same structure: a label, a claim, three concrete points and the same button. The repetition makes the page easy to scan." data-pt="O time de vendas tinha dezenas de mensagens. Agrupei em quatro argumentos e dei a cada um uma seção com a mesma estrutura: um selo, uma afirmação, três pontos concretos e o mesmo botão. A repetição deixa a página fácil de escanear.">The sales team had dozens of messages. I grouped them into four arguments and gave each one a section with the same structure: a label, a claim, three concrete points and the same button. The repetition makes the page easy to scan.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lf-args">
+          <figure class="lf-arg reveal">
+            <div class="lf-arg-media"><img src="../assets/img/leapfone/sec-economize.webp" alt="Section about savings: up to 2.5 times cheaper than buying, tax deductible, device swap every two years" loading="lazy"></div>
+            <figcaption><span class="lf-tag" data-en="Cash flow" data-pt="Fluxo de caixa">Cash flow</span><strong data-en="Does renting cost less than buying?" data-pt="Alugar custa menos do que comprar?">Does renting cost less than buying?</strong></figcaption>
+          </figure>
+          <figure class="lf-arg reveal">
+            <div class="lf-arg-media"><img src="../assets/img/leapfone/sec-gestao.webp" alt="Section about the management portal, shown on a desktop computer" loading="lazy"></div>
+            <figcaption><span class="lf-tag" data-en="Management" data-pt="Gestão">Management</span><strong data-en="Who takes care of the devices?" data-pt="Quem cuida dos aparelhos?">Who takes care of the devices?</strong></figcaption>
+          </figure>
+          <figure class="lf-arg reveal">
+            <div class="lf-arg-media is-rose"><img src="../assets/img/leapfone/sec-seguro.webp" alt="Section about insurance included in the subscription" loading="lazy"></div>
+            <figcaption><span class="lf-tag" data-en="Protection" data-pt="Proteção">Protection</span><strong data-en="What happens if a phone breaks or is stolen?" data-pt="E se o celular quebrar ou for roubado?">What happens if a phone breaks or is stolen?</strong></figcaption>
+          </figure>
+          <figure class="lf-arg reveal">
+            <div class="lf-arg-media"><img src="../assets/img/leapfone/sec-acessorios.webp" alt="Section about accessories included: case, screen protector and charger" loading="lazy"></div>
+            <figcaption><span class="lf-tag" data-en="Complete kit" data-pt="Kit completo">Complete kit</span><strong data-en="Is anything extra to buy?" data-pt="Tem algo a mais para comprar?">Is anything extra to buy?</strong></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERFACE DETAILS ============ -->
+    <section id="detalhes" data-ruler-en="Interface" data-ruler-pt="Interface" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Interface details" data-pt="Detalhes da interface">Interface details</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Four parts of the page, up close." data-pt="Quatro partes da página, de perto.">Four parts of the page, up close.</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lf-focus reveal">
+          <div class="lf-focus-copy">
+            <span class="lf-num">01</span>
+            <h3 data-en="Three promises right after the hero" data-pt="Três promessas logo depois do hero">Three promises right after the hero</h3>
+            <p data-en="Before the long sections start, three cards summarize the service: management from delivery to support, protection included and one portal for the whole fleet." data-pt="Antes das seções longas, três cards resumem o serviço: gestão da entrega ao suporte, proteção inclusa e um portal para a frota inteira.">Before the long sections start, three cards summarize the service: management from delivery to support, protection included and one portal for the whole fleet.</p>
+          </div>
+          <div class="lf-focus-media is-rose"><img src="../assets/img/leapfone/el-benefits.webp" alt="Three benefit cards: end-to-end management, full protection included, digital platform" loading="lazy"></div>
+        </div>
+
+        <div class="lf-focus is-wide reveal">
+          <div class="lf-focus-copy">
+            <span class="lf-num">02</span>
+            <h3 data-en="Subscribe or buy, side by side" data-pt="Assinar ou comprar, lado a lado">Subscribe or buy, side by side</h3>
+            <p data-en="Sales used to make this comparison by hand in every meeting. On the page it became a table with seven rows, from cash flow to setup, with a check or a cross in each column so it reads at a glance." data-pt="Vendas fazia essa comparação na mão em toda reunião. Na página ela virou uma tabela de sete linhas, do fluxo de caixa à configuração, com um check ou um x em cada coluna para ser lida de relance.">Sales used to make this comparison by hand in every meeting. On the page it became a table with seven rows, from cash flow to setup, with a check or a cross in each column so it reads at a glance.</p>
+          </div>
+          <div class="lf-focus-media"><img src="../assets/img/leapfone/el-compare.webp" alt="Comparison table between subscribing with Leapfone and buying phones" loading="lazy"></div>
+        </div>
+
+        <div class="lf-focus-pair">
+          <div class="lf-focus is-stack reveal">
+            <div class="lf-focus-copy">
+              <span class="lf-num">03</span>
+              <h3 data-en="A form built for a quote" data-pt="Um formulário pensado para o orçamento">A form built for a quote</h3>
+              <p data-en="It asks for what sales needs to prepare a proposal: company, CNPJ, number of employees and devices. The comment field comes prefilled, so nobody has to write from scratch." data-pt="Ele pede o que vendas precisa para preparar uma proposta: empresa, CNPJ, número de funcionários e de aparelhos. O campo de comentário já vem preenchido, para ninguém precisar escrever do zero.">It asks for what sales needs to prepare a proposal: company, CNPJ, number of employees and devices. The comment field comes prefilled, so nobody has to write from scratch.</p>
+            </div>
+            <div class="lf-focus-media"><img src="../assets/img/leapfone/el-form.webp" alt="Proposal request form" loading="lazy"></div>
+          </div>
+          <div class="lf-focus is-stack reveal">
+            <div class="lf-focus-copy">
+              <span class="lf-num">04</span>
+              <h3 data-en="Questions grouped by topic" data-pt="Dúvidas agrupadas por tema">Questions grouped by topic</h3>
+              <p data-en="Seven groups, from costs and taxes to delivery and payment, instead of one long list. They match the questions sales heard most." data-pt="Sete grupos, de custos e impostos a entrega e pagamento, em vez de uma lista longa. Eles seguem as perguntas que vendas mais ouvia.">Seven groups, from costs and taxes to delivery and payment, instead of one long list. They match the questions sales heard most.</p>
+            </div>
+            <div class="lf-focus-media is-rose"><img src="../assets/img/leapfone/el-faq.webp" alt="FAQ grouped in seven topics" loading="lazy"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="seo" data-ruler-en="SEO" data-ruler-pt="SEO" class="case-section dim">
-      <div class="container case-layout">
-        <div class="case-side"><div class="case-side-inner"><h4 data-en="Section" data-pt="Seção">Section</h4><p class="eyebrow" data-en="SEO and content strategy" data-pt="SEO e conteúdo estratégico">SEO and content strategy</p></div></div>
-        <div class="case-body">
-          <h2 data-en="Writing the way the client speaks, not the way the product is built." data-pt="Escrever como o cliente fala, não como o produto é feito.">Writing the way the client speaks, not the way the product is built.</h2>
-          <p data-en="I worked with the marketing team to align on B2B keywords, such as 'centralized device management', 'corporate smartphones' and 'device rental for companies'. I rewrote microcopy and headers based on UX writing principles and customer research, using the real language clients used day to day, like 'cash flow', 'up to date equipment' and 'fast replacement'." data-pt="Colaborei com o time de marketing para alinhar palavras-chave B2B, como 'gestão centralizada de celulares', 'smartphones corporativos' e 'locação de celulares para empresas'. Reescrevi microcopy e headers com base em UX writing e pesquisa com clientes, usando termos reais do dia a dia deles, como 'fluxo de caixa', 'equipamentos atualizados' e 'reposição rápida'.">I worked with the marketing team to align on B2B keywords, such as 'centralized device management', 'corporate smartphones' and 'device rental for companies'. I rewrote microcopy and headers based on UX writing principles and customer research, using the real language clients used day to day, like 'cash flow', 'up to date equipment' and 'fast replacement'.</p>
-          <p data-en="We also improved the semantic structure (H1, H2, meta tags) for SEO, which helped the content become easier to scan for people and search engines alike." data-pt="Também melhoramos a estrutura semântica (H1, H2, meta tags) para SEO, o que ajudou o conteúdo a ficar mais fácil de escanear tanto para pessoas quanto para buscadores.">We also improved the semantic structure (H1, H2, meta tags) for SEO, which helped the content become easier to scan for people and search engines alike.</p>
+    <!-- ============ MOBILE ============ -->
+    <section id="mobile" data-ruler-en="Mobile" data-ruler-pt="Mobile" class="case-section lf-mobile">
+      <div class="container">
+        <div class="lf-mobile-grid">
+          <div class="lf-mobile-copy">
+            <p class="eyebrow" data-en="Mobile" data-pt="Mobile">Mobile</p>
+            <h2 data-en="On mobile, each argument fits in one screen." data-pt="No mobile, cada argumento cabe em uma tela.">On mobile, each argument fits in one screen.</h2>
+            <p data-en="Image first, then the label, the claim, three points and the button. The call to action appears in every section, which fixed the main problem the data showed: on the old site, the button was out of reach on mobile." data-pt="Primeiro a imagem, depois o selo, a afirmação, três pontos e o botão. A chamada para ação aparece em todas as seções, o que resolveu o principal problema que os dados mostraram: no site antigo, o botão ficava fora do alcance no mobile.">Image first, then the label, the claim, three points and the button. The call to action appears in every section, which fixed the main problem the data showed: on the old site, the button was out of reach on mobile.</p>
+          </div>
+          <div class="lf-phones">
+            <div class="lf-phone is-side reveal"><div class="lf-screen"><img src="../assets/img/leapfone/m-economize.webp" alt="Mobile section about savings" loading="lazy"></div></div>
+            <div class="lf-phone is-main reveal"><div class="lf-screen" data-autoscroll><img src="../assets/img/leapfone/mobile-stack.webp" alt="The mobile version of the page, scrolling from the hero through the four argument sections" loading="lazy"></div></div>
+            <div class="lf-phone is-side reveal"><div class="lf-screen"><img src="../assets/img/leapfone/m-seguro.webp" alt="Mobile section about protection" loading="lazy"></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section">
+    <!-- ============ FULL PAGE ============ -->
+    <section id="pagina" data-ruler-en="Full page" data-ruler-pt="Página completa" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Full page" data-pt="Página completa">Full page</p></div></div>
+        <div class="case-body">
+          <h2 data-en="The final page, from the hero to the footer." data-pt="A página final, do hero ao rodapé.">The final page, from the hero to the footer.</h2>
+          <p data-en="The order follows the buying conversation: what it is, why it pays off, who already uses it, how it compares with buying and how to ask for a proposal." data-pt="A ordem segue a conversa de compra: o que é, por que vale a pena, quem já usa, como se compara com a compra e como pedir uma proposta.">The order follows the buying conversation: what it is, why it pays off, who already uses it, how it compares with buying and how to ask for a proposal.</p>
+        </div>
+      </div>
       <div class="container">
-        <p class="eyebrow" data-en="Results" data-pt="Resultados">Results</p>
-        <h2 style="font-family:var(--font-display);font-size:var(--step2);font-weight:600;margin:14px 0 10px;" data-en="A site ready for an investor conversation, not just a customer one." data-pt="Um site pronto para conversa com investidor, não só com cliente.">A site ready for an investor conversation, not just a customer one.</h2>
-        <p style="max-width:620px;color:var(--ink-soft);" data-en="The end result is a more direct institutional website, with clear visual hierarchy and messaging that reflects the company's current stage: more solid, strategic and ready to grow." data-pt="O resultado final é um site institucional mais direto, com hierarquia visual clara e uma comunicação que reflete o estágio atual da empresa: mais sólida, estratégica e preparada para crescer.">The end result is a more direct institutional website, with clear visual hierarchy and messaging that reflects the company's current stage: more solid, strategic and ready to grow.</p>
-        <p style="max-width:620px;color:var(--ink-soft);" data-en="What this project reinforced for me is that a website redesign is rarely just a design problem, it is an audience problem first. Once we agreed on who the site was actually talking to, most layout and copy decisions became obvious." data-pt="O que esse projeto reforçou pra mim é que um redesign de site raramente é só um problema de design, é antes de tudo um problema de audiência. Uma vez que concordamos sobre com quem o site estava de fato falando, a maioria das decisões de layout e texto ficou óbvia.">What this project reinforced for me is that a website redesign is rarely just a design problem, it is an audience problem first. Once we agreed on who the site was actually talking to, most layout and copy decisions became obvious.</p>
-        <ul class="case-results">
-          <li data-en="3 hypotheses formulated from real behavioral data (GA4 + Clarity)" data-pt="3 hipóteses formuladas a partir de dados reais de comportamento (GA4 + Clarity)">3 hypotheses formulated from real behavioral data (GA4 + Clarity)</li>
-          <li data-en="1 funnel restructured, from first scroll to 'Request a proposal'" data-pt="1 funil reestruturado, do primeiro scroll até 'Solicitar Proposta'">1 funnel restructured, from first scroll to 'Request a proposal'</li>
-          <li data-en="B2B tone of voice and SEO redesigned for the corporate audience" data-pt="Tom de voz e SEO redesenhados para o público empresarial">B2B tone of voice and SEO redesigned for the corporate audience</li>
-        </ul>
-        <p class="case-note" data-en="<strong>Note:</strong> this case reflects the process and design decisions I led during the project. Leapfone's current website may have gone through further iterations since." data-pt="<strong>Nota:</strong> este case reflete o processo e as decisões de design conduzidas por mim durante o projeto. O site atual da Leapfone pode ter passado por outras iterações desde então."><strong>Note:</strong> this case reflects the process and design decisions I led during the project. Leapfone's current website may have gone through further iterations since.</p>
+        <div class="lf-browser lf-browser--tall reveal">
+          <div class="lf-browser-bar"><i></i><i></i><i></i><span>leapfone.com.br/empresas</span></div>
+          <div class="lf-browser-view" data-autoscroll><img src="../assets/img/leapfone/desktop-full.webp" alt="The complete Leapfone Empresas desktop page" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEO ============ -->
+    <section id="seo" data-ruler-en="SEO" data-ruler-pt="SEO" class="case-section">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="SEO and copy" data-pt="SEO e texto">SEO and copy</p></div></div>
+        <div class="case-body">
+          <h2 data-en="Written with the words companies type into Google." data-pt="Escrito com as palavras que as empresas digitam no Google.">Written with the words companies type into Google.</h2>
+          <p data-en="With marketing, I mapped how companies search for this service, from the most direct terms to the ones IT managers use. Headlines, sections and meta tags were rewritten around them, and the headings got a proper H1 and H2 structure." data-pt="Com o marketing, mapeei como as empresas procuram esse serviço, dos termos mais diretos aos que gestores de TI usam. Títulos, seções e meta tags foram reescritos a partir deles, e os títulos ganharam uma estrutura correta de H1 e H2.">With marketing, I mapped how companies search for this service, from the most direct terms to the ones IT managers use. Headlines, sections and meta tags were rewritten around them, and the headings got a proper H1 and H2 structure.</p>
+          <div class="lf-keywords" aria-label="Search terms">
+            <span class="is-strong">aluguel de celular para empresas</span>
+            <span>locação de celulares corporativos</span>
+            <span>aluguel de smartphone para empresa</span>
+            <span>celular corporativo aluguel</span>
+            <span>aluguel de iPhone para empresa</span>
+            <span>outsourcing de smartphones</span>
+            <span>device as a service</span>
+          </div>
+          <p class="lf-note" data-en="The copy also swapped product language for the words clients used with sales, such as cash flow, up-to-date devices and fast replacement." data-pt="O texto também trocou a linguagem de produto pelas palavras que os clientes usavam com vendas, como fluxo de caixa, aparelhos atualizados e reposição rápida.">The copy also swapped product language for the words clients used with sales, such as cash flow, up-to-date devices and fast replacement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="resultados" data-ruler-en="Results" data-ruler-pt="Resultados" class="case-section dim">
+      <div class="container case-layout">
+        <div class="case-side"><div class="case-side-inner"><p class="eyebrow" data-en="Outcome" data-pt="Resultado">Outcome</p></div></div>
+        <div class="case-body">
+          <h2 data-en="A website a company can read as a supplier." data-pt="Um site que uma empresa consegue ler como fornecedor.">A website a company can read as a supplier.</h2>
+          <p data-en="The final site is more direct, with a clear hierarchy and a message that fits the stage Leapfone was in. The biggest lesson for me: once we agreed on who the site was talking to, most layout and copy decisions became simple." data-pt="O site final é mais direto, com hierarquia clara e uma mensagem que combina com o momento da Leapfone. A maior lição para mim: depois que concordamos sobre com quem o site falava, a maioria das decisões de layout e texto ficou simples.">The final site is more direct, with a clear hierarchy and a message that fits the stage Leapfone was in. The biggest lesson for me: once we agreed on who the site was talking to, most layout and copy decisions became simple.</p>
+          <div class="lf-results">
+            <div><strong>3</strong><span data-en="hypotheses from behaviour data in GA4 and Clarity" data-pt="hipóteses a partir de dados de comportamento no GA4 e no Clarity">hypotheses from behaviour data in GA4 and Clarity</span></div>
+            <div><strong>4</strong><span data-en="sales arguments turned into page sections" data-pt="argumentos de vendas transformados em seções">sales arguments turned into page sections</span></div>
+            <div><strong>1</strong><span data-en="call to action repeated in every section, on desktop and mobile" data-pt="chamada para ação repetida em todas as seções, no desktop e no mobile">call to action repeated in every section, on desktop and mobile</span></div>
+          </div>
+          <p class="lf-note" data-en="This case shows the process and the decisions I led. The live Leapfone website may have changed since." data-pt="Este case mostra o processo e as decisões que conduzi. O site atual da Leapfone pode ter mudado desde então.">This case shows the process and the decisions I led. The live Leapfone website may have changed since.</p>
+        </div>
       </div>
     </section>
 
     <section class="case-cta">
       <div class="container">
         <h3 data-en="Want to see another project?" data-pt="Quer ver outro projeto?">Want to see another project?</h3>
-        <p data-en="There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio." data-pt="Tem também um case bancário com o Banco do Brasil e um case de programa de fidelidade com a Gol no portfólio.">There is also a banking case with Banco do Brasil and a loyalty program case with Gol in the portfolio.</p>
+        <p data-en="There are also banking cases with AIB and Banco do Brasil and a loyalty case with Gol in the portfolio." data-pt="No portfólio também tem cases de banco com o AIB e o Banco do Brasil e um case de fidelidade com a Gol.">There are also banking cases with AIB and Banco do Brasil and a loyalty case with Gol in the portfolio.</p>
         <a class="btn btn-solid" href="../index.html#projetos" data-en="View all projects" data-pt="Ver todos os projetos">View all projects</a>
       </div>
     </section>
@@ -169,5 +324,6 @@
   </footer>
 
   <script src="../js/script.js"></script>
+  <script src="../js/case-leapfone.js"></script>
 </body>
 </html>
