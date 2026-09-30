@@ -1,0 +1,11 @@
+/* =========================================================
+   lucasbraga - home layout tweaks
+   Loaded only on index.html, so case pages keep their spacing.
+   ========================================================= */
+
+/* tighter rhythm between sections: ~166px between blocks on desktop (was ~243px), ~112px on mobile (was 160px) */
+#sobre, #projetos, #depoimentos, #contato{
+  padding-top: clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
+}
+.hero{ padding-bottom: clamp(3.5rem, 2.5rem + 3vw, 5.5rem); }
